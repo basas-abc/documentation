@@ -1,0 +1,2551 @@
+{
+	"info": {
+		"_postman_id": "156ac756-764c-470e-9b95-5fd0b75015ab",
+		"name": "Basas",
+		"description": "# Introduction\nWhat does your API do?\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWhat errors and status codes can a user expect?\n\n# Rate limit\nIs there a limit to the number of requests an user can send?",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Detination Account",
+			"item": [
+				{
+					"name": "Link Destination Account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "PMAK-6022d317fec5d80029707e86-37ec0d93820a2f78d0d34975b401594f10",
+								"type": "text"
+							},
+							{
+								"key": "x-mock-match-request-body",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"function\":\"I\",\r\n   \"prn\":\"foo\",\r\n   \"account\":\"12345678\",\r\n   \"beneficiary\":\"Juan Perez Perez\",\r\n   \"rfc\":\"ABCDE123456\",\r\n   \"email\":\"test@abc.com.mx\",\r\n   \"channel\":\"001\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/basas/client/destination",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"basas",
+								"client",
+								"destination"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Error 1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"function\":\"I\",\r\n   \"prn\":\"foo\",\r\n   \"account\":\"\",\r\n   \"beneficiary\":\"Juan Perez Perez\",\r\n   \"rfc\":\"ABCDE123456\",\r\n   \"email\":\"test@abc.com.mx\",\r\n   \"channel\":\"001\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/client/destination",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"client",
+										"destination"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"status\":\"error\",\r\n    \"code\":1,\r\n    \"message\":\"Longitud de cuenta inválida\"\r\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"function\":\"I\",\r\n   \"prn\":\"foo\",\r\n   \"account\":\"12345678\",\r\n   \"beneficiary\":\"Juan Perez Perez\",\r\n   \"rfc\":\"ABCDE123456\",\r\n   \"email\":\"test@abc.com.mx\",\r\n   \"channel\":\"001\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/client/destination",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"client",
+										"destination"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"status\":\"success\",\r\n    \"message\":\"linked account\",\r\n    \"idBeneficiary\":\"12345678\"\r\n}"
+						},
+						{
+							"name": "Error 0",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"function\":\"I\",\r\n   \"prn\":\"\",\r\n   \"account\":\"12345678\",\r\n   \"beneficiary\":\"Juan Perez Perez\",\r\n   \"rfc\":\"ABCDE123456\",\r\n   \"email\":\"test@abc.com.mx\",\r\n   \"channel\":\"001\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/client/destination",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"client",
+										"destination"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"status\":\"error\",\r\n    \"code\":0,\r\n    \"message\":\"PRN no existe\"\r\n}"
+						},
+						{
+							"name": "Error 5",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"function\":\"I\",\r\n   \"prn\":\"foo\",\r\n   \"account\":\"\",\r\n   \"beneficiary\":\"Juan Perez Perez\",\r\n   \"rfc\":\"ABCDE123456\",\r\n   \"email\":\"test@abc.com.mx\",\r\n   \"channel\":\"001\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/client/destination",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"client",
+										"destination"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"code\": 5,\n    \"message\": \"Cliente inexistente\"\n}"
+						},
+						{
+							"name": "Error 6",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"function\":\"I\",\r\n   \"prn\":\"foo\",\r\n   \"account\":\"12345678\",\r\n   \"beneficiary\":\"Juan Perez Perez\",\r\n   \"rfc\":\"\",\r\n   \"email\":\"test@abc.com.mx\",\r\n   \"channel\":\"001\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/client/destination",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"client",
+										"destination"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"code\": 6,\n    \"message\": \"Error en RFC\"\n}"
+						},
+						{
+							"name": "Error 8",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"function\":\"I\",\r\n   \"prn\":\"foo\",\r\n   \"account\":\"12345678\",\r\n   \"beneficiary\":\"\",\r\n   \"rfc\":\"ABCDE123456\",\r\n   \"email\":\"test@abc.com.mx\",\r\n   \"channel\":\"001\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/client/destination",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"client",
+										"destination"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"code\": 8,\n    \"message\": \"Error en la cuenta beneficiaria\"\n}"
+						},
+						{
+							"name": "Error 3",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"function\":\"I\",\r\n   \"prn\":\"foo\",\r\n   \"account\":\"12345678\",\r\n   \"beneficiary\":\"Juan Perez Perez\",\r\n   \"rfc\":\"ABCDE123456\",\r\n   \"email\":\"\",\r\n   \"channel\":\"001\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/client/destination",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"client",
+										"destination"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"code\": 3,\n    \"message\": \"Error en email\"\n}"
+						},
+						{
+							"name": "Error 7",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"function\":\"I\",\r\n   \"prn\":\"foo\",\r\n   \"account\":\"12345678\",\r\n   \"beneficiary\":\"Juan Perez Perez\",\r\n   \"rfc\":\"ABCDE123456\",\r\n   \"email\":\"\",\r\n   \"channel\":\"001\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/client/destination",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"client",
+										"destination"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"code\": 7,\n    \"message\": \"Error en email\"\n}"
+						},
+						{
+							"name": "Error 4",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"function\":\"I\",\r\n   \"prn\":\"foo\",\r\n   \"account\":\"12345678\",\r\n   \"beneficiary\":\"Juan Perez Perez\",\r\n   \"rfc\":\"ABCDE123456\",\r\n   \"email\":\"test@abc.com.mx\",\r\n   \"channel\":\"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/client/destination",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"client",
+										"destination"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"code\": 4,\n    \"message\": \"Error en canal\"\n}"
+						},
+						{
+							"name": "Error 2",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/client/destination",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"client",
+										"destination"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"status\":\"error\",\r\n    \"code\":2,\r\n    \"message\":\"Falta información obligatoria\"\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Unlink Destination Account",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "PMAK-6022d317fec5d80029707e86-37ec0d93820a2f78d0d34975b401594f10",
+								"type": "text"
+							},
+							{
+								"key": "x-mock-match-request-body",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"function\":\"D\",\r\n   \"channel\":\"001\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/basas/client/destination/1234567",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"basas",
+								"client",
+								"destination",
+								"1234567"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"function\":\"D\",\r\n   \"channel\":\"001\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/client/destination/1234567",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"client",
+										"destination",
+										"1234567"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"status\":\"success\",\r\n    \"message\":\"unlinked account\"\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Modify Destination Account",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "PMAK-6022d317fec5d80029707e86-37ec0d93820a2f78d0d34975b401594f10",
+								"type": "text"
+							},
+							{
+								"key": "x-mock-match-request-body",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"function\":\"M\",\r\n   \"prn\":\"foo\",\r\n   \"account\":\"12345678\",\r\n   \"beneficiary\":\"Juan Perez Perez\",\r\n   \"rfc\":\"ABCDE123456\",\r\n   \"email\":\"test@abc.com.mx\",\r\n   \"channel\":\"001\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/basas/client/destination/1234567",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"basas",
+								"client",
+								"destination",
+								"1234567"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Error 5",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"function\":\"M\",\r\n   \"prn\":\"foo\",\r\n   \"account\":\"\",\r\n   \"beneficiary\":\"Juan Perez Perez\",\r\n   \"rfc\":\"ABCDE123456\",\r\n   \"email\":\"test@abc.com.mx\",\r\n   \"channel\":\"001\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/client/destination/1234567",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"client",
+										"destination",
+										"1234567"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"code\": 5,\n    \"message\": \"Cliente inexistente\"\n}"
+						},
+						{
+							"name": "Error 1",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"function\":\"M\",\r\n   \"prn\":\"foo\",\r\n   \"account\":\"\",\r\n   \"beneficiary\":\"Juan Perez Perez\",\r\n   \"rfc\":\"ABCDE123456\",\r\n   \"email\":\"test@abc.com.mx\",\r\n   \"channel\":\"001\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/client/destination/1234567",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"client",
+										"destination",
+										"1234567"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"status\":\"error\",\r\n    \"code\":1,\r\n    \"message\":\"Longitud de cuenta inválida\"\r\n}"
+						},
+						{
+							"name": "Error 2",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/client/destination/1234567",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"client",
+										"destination",
+										"1234567"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"status\":\"error\",\r\n    \"code\":2,\r\n    \"message\":\"Falta información obligatoria\"\r\n}"
+						},
+						{
+							"name": "Error 4",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"function\":\"M\",\r\n   \"channel\":\"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/client/destination/1234567",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"client",
+										"destination",
+										"1234567"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"code\": 4,\n    \"message\": \"Error en canal\"\n}"
+						},
+						{
+							"name": "Error 0",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"function\":\"M\",\r\n   \"prn\":\"\",\r\n   \"account\":\"12345678\",\r\n   \"beneficiary\":\"Juan Perez Perez\",\r\n   \"rfc\":\"ABCDE123456\",\r\n   \"email\":\"test@abc.com.mx\",\r\n   \"channel\":\"001\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/client/destination/1234567",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"client",
+										"destination",
+										"1234567"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"status\":\"error\",\r\n    \"code\":0,\r\n    \"message\":\"PRN no existe\"\r\n}"
+						},
+						{
+							"name": "Error 3",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"function\":\"M\",\r\n   \"prn\":\"foo\",\r\n   \"account\":\"12345678\",\r\n   \"beneficiary\":\"Juan Perez Perez\",\r\n   \"rfc\":\"ABCDE123456\",\r\n   \"email\":\"\",\r\n   \"channel\":\"001\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/client/destination/1234567",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"client",
+										"destination",
+										"1234567"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"code\": 3,\n    \"message\": \"Error en email\"\n}"
+						},
+						{
+							"name": "Error 7",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"function\":\"M\",\r\n   \"prn\":\"foo\",\r\n   \"account\":\"12345678\",\r\n   \"beneficiary\":\"Juan Perez Perez\",\r\n   \"rfc\":\"ABCDE123456\",\r\n   \"email\":\"\",\r\n   \"channel\":\"001\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/client/destination/1234567",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"client",
+										"destination",
+										"1234567"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"code\": 7,\n    \"message\": \"Error en email\"\n}"
+						},
+						{
+							"name": "Error 6",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"function\":\"M\",\r\n   \"prn\":\"foo\",\r\n   \"account\":\"12345678\",\r\n   \"beneficiary\":\"Juan Perez Perez\",\r\n   \"rfc\":\"\",\r\n   \"email\":\"test@abc.com.mx\",\r\n   \"channel\":\"001\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/client/destination/1234567",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"client",
+										"destination",
+										"1234567"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"code\": 6,\n    \"message\": \"Error en RFC\"\n}"
+						},
+						{
+							"name": "Error 8",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"function\":\"M\",\r\n   \"prn\":\"foo\",\r\n   \"account\":\"12345678\",\r\n   \"beneficiary\":\"\",\r\n   \"rfc\":\"ABCDE123456\",\r\n   \"email\":\"test@abc.com.mx\",\r\n   \"channel\":\"001\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/client/destination/1234567",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"client",
+										"destination",
+										"1234567"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"code\": 8,\n    \"message\": \"Error en la cuenta beneficiaria\"\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"function\":\"M\",\r\n   \"prn\":\"foo\",\r\n   \"account\":\"12345678\",\r\n   \"beneficiary\":\"Juan Perez Perez\",\r\n   \"rfc\":\"ABCDE123456\",\r\n   \"email\":\"test@abc.com.mx\",\r\n   \"channel\":\"001\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/client/destination/1234567",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"client",
+										"destination",
+										"1234567"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"status\":\"success\",\r\n    \"message\":\"modified account\"\r\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Transaccions",
+			"item": [
+				{
+					"name": "Send Spei",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "PMAK-6022d317fec5d80029707e86-37ec0d93820a2f78d0d34975b401594f10",
+								"type": "text"
+							},
+							{
+								"key": "x-mock-match-request-body",
+								"value": "true",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"origin\": \"1323123312312\",\r\n    \"destination\": \"789789789789\",\r\n    \"amount\": \"MXN300.00\",\r\n    \"idBank\": \"000\",\r\n    \"typeAccount\": \"debit\",\r\n    \"concept\": \"Concepto de Pago\",\r\n    \"reference\": \"1111111\",\r\n    \"channel\": \"001\",\r\n    \"geolocation\": \"44.244167,7.769444\",\r\n    \"signing\": \"Important! - See the documentation on Encryption signature.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/basas/transaction/spei",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"basas",
+								"transaction",
+								"spei"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "In Progress",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"origin\":\"1323123312312\",\r\n   \"destination\":\"789789789789\",\r\n   \"amount\":\"MXN300.00\",\r\n   \"idBank\":\"000\",\r\n   \"typeAccount\":\"debit\",\r\n   \"concept\":\"Concepto de Pago\",\r\n   \"reference\":\"1111111\",\r\n   \"channel\":\"001\",\r\n   \"geolocation\":\"44.244167,7.769444\",\r\n   \"signing\":\"Important! - See the documentation on Encryption signature.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/transaction/spei",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"transaction",
+										"spei"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 09 Feb 2021 17:40:58 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "x-srv-trace",
+									"value": "v=1;t=1e3b53bf9033d0a0"
+								},
+								{
+									"key": "x-srv-span",
+									"value": "v=1;s=1000521269014855"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"50-rVaIclNFW4TqtBHUw3LQgNGrsB8\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n   \"status\":\"success\",\n   \"msg\":\"Transaccion en envio\"\n}"
+						},
+						{
+							"name": "Not found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/transaction/spei",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"transaction",
+										"spei"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 09 Feb 2021 17:40:58 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "x-srv-trace",
+									"value": "v=1;t=1e3b53bf9033d0a0"
+								},
+								{
+									"key": "x-srv-span",
+									"value": "v=1;s=1000521269014855"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"50-rVaIclNFW4TqtBHUw3LQgNGrsB8\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n   \"status\":\"error\",\n   \"msg\":\"No existe endpoint\"\n}"
+						},
+						{
+							"name": "Sign Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"signing\":\"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/transaction/spei",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"transaction",
+										"spei"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"message\": \"firma incorrecta\"\n}"
+						},
+						{
+							"name": "Transfer error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "PMAK-6022d317fec5d80029707e86-37ec0d93820a2f78d0d34975b401594f10",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/transaction/spei",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"transaction",
+										"spei"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n   \"status\":\"error\",\r\n   \"msg\":\"No es posible hacer la transaccion\"\r\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"origin\":\"1323123312312\",\r\n   \"destination\":\"789789789789\",\r\n   \"amount\":\"MXN300.00\",\r\n   \"idBank\":\"000\",\r\n   \"typeAccount\":\"debit\",\r\n   \"concept\":\"Concepto de Pago\",\r\n   \"reference\":\"1234567\",\r\n   \"channel\":\"001\",\r\n   \"geolocation\":\"44.244167,7.769444\",\r\n   \"signing\":\"Important! - See the documentation on Encryption signature.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/transaction/spei",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"transaction",
+										"spei"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 09 Feb 2021 17:40:58 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "x-srv-trace",
+									"value": "v=1;t=1e3b53bf9033d0a0"
+								},
+								{
+									"key": "x-srv-span",
+									"value": "v=1;s=1000521269014855"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"50-rVaIclNFW4TqtBHUw3LQgNGrsB8\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n   \"status\":\"success\",\n   \"message\":\"successful shipment\",\n   \"idTransaction\":\"12345678\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Catalog",
+			"item": [
+				{
+					"name": "Bank Catalog",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-mock-match-request-body",
+								"value": "true",
+								"type": "text"
+							},
+							{
+								"key": "x-api-key",
+								"value": "PMAK-6022d317fec5d80029707e86-37ec0d93820a2f78d0d34975b401594f10",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"id\":\"002\",\r\n   \"bank\":\"bbva\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/basas/catalog/bank",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"basas",
+								"catalog",
+								"bank"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"id\":\"002\",\r\n   \"bank\":\"bbva\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/catalog/bank",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"catalog",
+										"bank"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "[\r\n    {\r\n        \"id\":\"002\",\r\n        \"name\":\"bbva\",\r\n        \"type\":\"foo\"\r\n    },\r\n    {\r\n        \"id\":\"003\",\r\n        \"name\":\"banorte\",\r\n        \"type\":\"foo\"\r\n    }\r\n]"
+						},
+						{
+							"name": "Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/catalog/bank",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"catalog",
+										"bank"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"status\": \"error\",\r\n    \"msg\": \"Problemas para obtener el catalogo\"\r\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Enrollement",
+			"item": [
+				{
+					"name": "Create Account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "PMAK-6022d317fec5d80029707e86-37ec0d93820a2f78d0d34975b401594f10",
+								"type": "text"
+							},
+							{
+								"key": "x-mock-match-request-body",
+								"value": "true",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idClient\":\"123312123\",\r\n    \"client\":{\r\n        \"paternalName\":\"ROMERO\",\r\n        \"maternalName\":\"GAYTAN\",\r\n        \"firstName\":\"ANGELICA\",\r\n        \"birthDate\":19760224,\r\n        \"birthPlace\":\"09\",\r\n        \"gender\":\"F\",\r\n        \"curp\":\"ROGA760224MDFBTD09\",\r\n        \"telephone\":5557864590,\r\n        \"email\":\"angelica.romero@hotmail.com\",\r\n        \"streetAddress\":\"ALBA\",\r\n        \"premise\":\"55-B\",\r\n        \"subPremise\":\"1A\",\r\n        \"postalCode\":\"11000\",\r\n        \"neighborhood\":\"09003049100716\",\r\n        \"numberId\":\"2898403\",\r\n        \"dateExpeditionNumberId\":20130120,\r\n        \"dateExpirationNumberId\":20220405,\r\n        \"channel\":\"04\",\r\n        \"rfc\":\"ABCDEFGHI1234\"\r\n    },\r\n    \"documents\":{\r\n        \"identification\":\"data:image/jpeg;base64,/9j/4AAQSkZJR...\",\r\n        \"proofAddress\":\"data:application/pdf;base64,JVBERi0xLj...\",\r\n        \"selfie\":\"data:image/jpeg;base64,/9j/4AAQSkZJR...\"\r\n    }\r\n\r\n}"
+						},
+						"url": {
+							"raw": "{{url}}/basas/account/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"basas",
+								"account",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Error 5_lastName_2",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idClient\":\"123312123\",\r\n    \"client\":{\r\n        \"paternalName\":\"ROMERO\",\r\n        \"maternalName\":\"\",\r\n        \"firstName\":\"ANGELICA\",\r\n        \"birthDate\":19760224,\r\n        \"birthPlace\":\"09\",\r\n        \"gender\":\"F\",\r\n        \"curp\":\"ROGA760224MDFBTD09\",\r\n        \"telephone\":5557864590,\r\n        \"email\":\"angelica.romero@hotmail.com\",\r\n        \"streetAddress\":\"ALBA\",\r\n        \"premise\":\"55-B\",\r\n        \"subPremise\":\"1A\",\r\n        \"postalCode\":\"11000\",\r\n        \"neighborhood\":\"09003049100716\",\r\n        \"numberId\":\"2898403\",\r\n        \"dateExpeditionNumberId\":20130120,\r\n        \"dateExpirationNumberId\":20220405,\r\n        \"channel\":\"04\",\r\n        \"rfc\":\"ABCDEFGHI1234\"\r\n    },\r\n    \"documents\":{\r\n        \"identification\":\"data:image/jpeg;base64,/9j/4AAQSkZJR...\",\r\n        \"proofAddress\":\"data:application/pdf;base64,JVBERi0xLj...\",\r\n        \"selfie\":\"data:image/jpeg;base64,/9j/4AAQSkZJR...\"\r\n    }\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/account/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"account",
+										"create"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": \"exception\",\n    \"code\": 5,\n    \"message\": \"NO COINCIDE ALGUNO DE LOS NOMBRES\"\n}"
+						},
+						{
+							"name": "Error 4",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idClient\":\"123312123\",\r\n    \"client\":{\r\n        \"paternalName\":\"ROMERO\",\r\n        \"maternalName\":\"GAYTAN\",\r\n        \"firstName\":\"ANGELICA\",\r\n        \"birthDate\":19760224,\r\n        \"birthPlace\":\"09\",\r\n        \"gender\":\"F\",\r\n        \"curp\":\"000000000000000000\",\r\n        \"telephone\":5557864590,\r\n        \"email\":\"angelica.romero@hotmail.com\",\r\n        \"streetAddress\":\"ALBA\",\r\n        \"premise\":\"55-B\",\r\n        \"subPremise\":\"1A\",\r\n        \"postalCode\":\"11000\",\r\n        \"neighborhood\":\"09003049100716\",\r\n        \"numberId\":\"2898403\",\r\n        \"dateExpeditionNumberId\":20130120,\r\n        \"dateExpirationNumberId\":20220405,\r\n        \"channel\":\"04\",\r\n        \"rfc\":\"ABCDEFGHI1234\"\r\n    },\r\n    \"documents\":{\r\n        \"identification\":\"data:image/jpeg;base64,/9j/4AAQSkZJR...\",\r\n        \"proofAddress\":\"data:application/pdf;base64,JVBERi0xLj...\",\r\n        \"selfie\":\"data:image/jpeg;base64,/9j/4AAQSkZJR...\"\r\n    }\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/account/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"account",
+										"create"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": \"exception\",\n    \"code\": 4,\n    \"message\": \"CURP’s NO COINCIDEN\"\n}"
+						},
+						{
+							"name": "Error 5_lastName_1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idClient\":\"123312123\",\r\n    \"client\":{\r\n        \"paternalName\":\"\",\r\n        \"maternalName\":\"GAYTAN\",\r\n        \"firstName\":\"ANGELICA\",\r\n        \"birthDate\":19760224,\r\n        \"birthPlace\":\"09\",\r\n        \"gender\":\"F\",\r\n        \"curp\":\"ROGA760224MDFBTD09\",\r\n        \"telephone\":5557864590,\r\n        \"email\":\"angelica.romero@hotmail.com\",\r\n        \"streetAddress\":\"ALBA\",\r\n        \"premise\":\"55-B\",\r\n        \"subPremise\":\"1A\",\r\n        \"postalCode\":\"11000\",\r\n        \"neighborhood\":\"09003049100716\",\r\n        \"numberId\":\"2898403\",\r\n        \"dateExpeditionNumberId\":20130120,\r\n        \"dateExpirationNumberId\":20220405,\r\n        \"channel\":\"04\",\r\n        \"rfc\":\"ABCDEFGHI1234\"\r\n    },\r\n    \"documents\":{\r\n        \"identification\":\"data:image/jpeg;base64,/9j/4AAQSkZJR...\",\r\n        \"proofAddress\":\"data:application/pdf;base64,JVBERi0xLj...\",\r\n        \"selfie\":\"data:image/jpeg;base64,/9j/4AAQSkZJR...\"\r\n    }\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/account/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"account",
+										"create"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": \"exception\",\n    \"code\": 5,\n    \"message\": \"NO COINCIDE ALGUNO DE LOS NOMBRES\"\n}"
+						},
+						{
+							"name": "Error 1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/account/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"account",
+										"create"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"status\":\"exception\",\r\n    \"code\": 1,\r\n    \"message\":\"ERROR EN JASON DE ENTRADA\"\r\n}"
+						},
+						{
+							"name": "Error 2",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idClient\":\"123312123\",\r\n    \"client\":{\r\n        \"paternalName\":\"ROMERO\",\r\n        \"maternalName\":\"GAYTAN\",\r\n        \"firstName\":\"ANGELICA\",\r\n        \"birthDate\":19760224,\r\n        \"birthPlace\":\"09\",\r\n        \"gender\":\"F\",\r\n        \"curp\":\"ROGA760224MDFBTD09\",\r\n        \"telephone\":5557864590,\r\n        \"email\":\"angelica.romero@hotmail.com\",\r\n        \"streetAddress\":\"ALBA\",\r\n        \"premise\":\"55-B\",\r\n        \"subPremise\":\"1A\",\r\n        \"postalCode\":\"11000\",\r\n        \"neighborhood\":\"09003049100716\",\r\n        \"numberId\":\"2898403\",\r\n        \"dateExpeditionNumberId\":20130120,\r\n        \"dateExpirationNumberId\":20220405,\r\n        \"channel\":\"00\",\r\n        \"rfc\":\"ABCDEFGHI1234\"\r\n    },\r\n    \"documents\":{\r\n        \"identification\":\"data:image/jpeg;base64,/9j/4AAQSkZJR...\",\r\n        \"proofAddress\":\"data:application/pdf;base64,JVBERi0xLj...\",\r\n        \"selfie\":\"data:image/jpeg;base64,/9j/4AAQSkZJR...\"\r\n    }\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/account/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"account",
+										"create"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": \"exception\",\n    \"code\": 2,\n    \"message\": \"CANAL INVÁLIDO\"\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idClient\":\"123312123\",\r\n    \"client\":{\r\n        \"paternalName\":\"ROMERO\",\r\n        \"maternalName\":\"GAYTAN\",\r\n        \"firstName\":\"ANGELICA\",\r\n        \"birthDate\":19760224,\r\n        \"birthPlace\":\"09\",\r\n        \"gender\":\"F\",\r\n        \"curp\":\"ROGA760224MDFBTD09\",\r\n        \"telephone\":5557864590,\r\n        \"email\":\"angelica.romero@hotmail.com\",\r\n        \"streetAddress\":\"ALBA\",\r\n        \"premise\":\"55-B\",\r\n        \"subPremise\":\"1A\",\r\n        \"postalCode\":\"11000\",\r\n        \"neighborhood\":\"09003049100716\",\r\n        \"numberId\":\"2898403\",\r\n        \"dateExpeditionNumberId\":20130120,\r\n        \"dateExpirationNumberId\":20220405,\r\n        \"channel\":\"04\",\r\n        \"rfc\":\"ABCDEFGHI1234\"\r\n    },\r\n    \"documents\":{\r\n        \"identification\":\"data:image/jpeg;base64,/9j/4AAQSkZJR...\",\r\n        \"proofAddress\":\"data:application/pdf;base64,JVBERi0xLj...\",\r\n        \"selfie\":\"data:image/jpeg;base64,/9j/4AAQSkZJR...\"\r\n    }\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/account/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"account",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"status\":\"success\",\r\n    \"message\":\"Registro de Usuario\",\r\n    \"idClient\":\"12312312312\",\r\n    \"idAccount\":\"000000000\",\r\n    \"CLABE\": \"123456789012345678\",\r\n    \"prn\":\"2345234534\"\r\n}"
+						},
+						{
+							"name": "Error 15",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idClient\":\"010101010\",\r\n    \"client\":{\r\n        \"paternalName\":\"ROMERO\",\r\n        \"maternalName\":\"GAYTAN\",\r\n        \"firstName\":\"ANGELICA\",\r\n        \"birthDate\":19760224,\r\n        \"birthPlace\":\"09\",\r\n        \"gender\":\"F\",\r\n        \"curp\":\"ROGA760224MDFBTD09\",\r\n        \"telephone\":5557864590,\r\n        \"email\":\"angelica.romero@hotmail.com\",\r\n        \"streetAddress\":\"ALBA\",\r\n        \"premise\":\"55-B\",\r\n        \"subPremise\":\"1A\",\r\n        \"postalCode\":\"11000\",\r\n        \"neighborhood\":\"09003049100716\",\r\n        \"numberId\":\"2898403\",\r\n        \"dateExpeditionNumberId\":20130120,\r\n        \"dateExpirationNumberId\":20220405,\r\n        \"channel\":\"04\",\r\n        \"rfc\":\"ABCDEFGHI1234\"\r\n    },\r\n    \"documents\":{\r\n        \"identification\":\"data:image/jpeg;base64,/9j/4AAQSkZJR...\",\r\n        \"proofAddress\":\"data:application/pdf;base64,JVBERi0xLj...\",\r\n        \"selfie\":\"data:image/jpeg;base64,/9j/4AAQSkZJR...\"\r\n    }\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/account/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"account",
+										"create"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": \"exception\",\n    \"code\": 15,\n    \"message\": \"NO SE REALIZO EL ALTA\"\n}"
+						},
+						{
+							"name": "Error 12",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idClient\":\"123312123\",\r\n    \"client\":{\r\n        \"paternalName\":\"ROMERO\",\r\n        \"maternalName\":\"GAYTAN\",\r\n        \"firstName\":\"ANGELICA\",\r\n        \"birthDate\":19760224,\r\n        \"birthPlace\":\"09\",\r\n        \"gender\":\"F\",\r\n        \"curp\":\"123ABC123ABC123ABC\",\r\n        \"telephone\":5557864590,\r\n        \"email\":\"angelica.romero@hotmail.com\",\r\n        \"streetAddress\":\"ALBA\",\r\n        \"premise\":\"55-B\",\r\n        \"subPremise\":\"1A\",\r\n        \"postalCode\":\"11000\",\r\n        \"neighborhood\":\"09003049100716\",\r\n        \"numberId\":\"2898403\",\r\n        \"dateExpeditionNumberId\":20130120,\r\n        \"dateExpirationNumberId\":20220405,\r\n        \"channel\":\"04\",\r\n        \"rfc\":\"ABCDEFGHI1234\"\r\n    },\r\n    \"documents\":{\r\n        \"identification\":\"data:image/jpeg;base64,/9j/4AAQSkZJR...\",\r\n        \"proofAddress\":\"data:application/pdf;base64,JVBERi0xLj...\",\r\n        \"selfie\":\"data:image/jpeg;base64,/9j/4AAQSkZJR...\"\r\n    }\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/account/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"account",
+										"create"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": \"exception\",\n    \"code\": 12,\n    \"message\": \"LA CURP NO SE ENCUENTRA EN LA BASE DE DATOS\"\n}"
+						},
+						{
+							"name": "Error 10",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idClient\":\"\",\r\n    \"client\":{\r\n        \"paternalName\":\"ROMERO\",\r\n        \"maternalName\":\"GAYTAN\",\r\n        \"firstName\":\"ANGELICA\",\r\n        \"birthDate\":19760224,\r\n        \"birthPlace\":\"09\",\r\n        \"gender\":\"F\",\r\n        \"curp\":\"ROGA760224MDFBTD09\",\r\n        \"telephone\":5557864590,\r\n        \"email\":\"angelica.romero@hotmail.com\",\r\n        \"streetAddress\":\"ALBA\",\r\n        \"premise\":\"55-B\",\r\n        \"subPremise\":\"1A\",\r\n        \"postalCode\":\"11000\",\r\n        \"neighborhood\":\"09003049100716\",\r\n        \"numberId\":\"2898403\",\r\n        \"dateExpeditionNumberId\":20130120,\r\n        \"dateExpirationNumberId\":20220405,\r\n        \"channel\":\"04\",\r\n        \"rfc\":\"ABCDEFGHI1234\"\r\n    },\r\n    \"documents\":{\r\n        \"identification\":\"data:image/jpeg;base64,/9j/4AAQSkZJR...\",\r\n        \"proofAddress\":\"data:application/pdf;base64,JVBERi0xLj...\",\r\n        \"selfie\":\"data:image/jpeg;base64,/9j/4AAQSkZJR...\"\r\n    }\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/account/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"account",
+										"create"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": \"exception\",\n    \"code\": 10,\n    \"message\": \"ERROR AL REALIZAR CONSULTA RENAPO\"\n}"
+						},
+						{
+							"name": "Error 6",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idClient\":\"123312123\",\r\n    \"client\":{\r\n        \"paternalName\":\"ROMERO\",\r\n        \"maternalName\":\"GAYTAN\",\r\n        \"firstName\":\"ANGELICA\",\r\n        \"birthDate\":\"\",\r\n        \"birthPlace\":\"09\",\r\n        \"gender\":\"F\",\r\n        \"curp\":\"ROGA760224MDFBTD09\",\r\n        \"telephone\":5557864590,\r\n        \"email\":\"angelica.romero@hotmail.com\",\r\n        \"streetAddress\":\"ALBA\",\r\n        \"premise\":\"55-B\",\r\n        \"subPremise\":\"1A\",\r\n        \"postalCode\":\"11000\",\r\n        \"neighborhood\":\"09003049100716\",\r\n        \"numberId\":\"2898403\",\r\n        \"dateExpeditionNumberId\":20130120,\r\n        \"dateExpirationNumberId\":20220405,\r\n        \"channel\":\"04\",\r\n        \"rfc\":\"ABCDEFGHI1234\"\r\n    },\r\n    \"documents\":{\r\n        \"identification\":\"data:image/jpeg;base64,/9j/4AAQSkZJR...\",\r\n        \"proofAddress\":\"data:application/pdf;base64,JVBERi0xLj...\",\r\n        \"selfie\":\"data:image/jpeg;base64,/9j/4AAQSkZJR...\"\r\n    }\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/account/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"account",
+										"create"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": \"exception\",\n    \"code\": 6,\n    \"message\": \"LA FECHA DE NACIMIENTO NO FUE PROPORCIONADA\"\n}"
+						},
+						{
+							"name": "Error 9",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idClient\":\"123312123\",\r\n    \"client\":{\r\n        \"paternalName\":\"ROMERO\",\r\n        \"maternalName\":\"GAYTAN\",\r\n        \"firstName\":\"ANGELICA\",\r\n        \"birthDate\":19760224,\r\n        \"birthPlace\":\"09\",\r\n        \"gender\":\"F\",\r\n        \"curp\":\"\",\r\n        \"telephone\":5557864590,\r\n        \"email\":\"angelica.romero@hotmail.com\",\r\n        \"streetAddress\":\"ALBA\",\r\n        \"premise\":\"55-B\",\r\n        \"subPremise\":\"1A\",\r\n        \"postalCode\":\"11000\",\r\n        \"neighborhood\":\"09003049100716\",\r\n        \"numberId\":\"2898403\",\r\n        \"dateExpeditionNumberId\":20130120,\r\n        \"dateExpirationNumberId\":20220405,\r\n        \"channel\":\"04\",\r\n        \"rfc\":\"ABCDEFGHI1234\"\r\n    },\r\n    \"documents\":{\r\n        \"identification\":\"data:image/jpeg;base64,/9j/4AAQSkZJR...\",\r\n        \"proofAddress\":\"data:application/pdf;base64,JVBERi0xLj...\",\r\n        \"selfie\":\"data:image/jpeg;base64,/9j/4AAQSkZJR...\"\r\n    }\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/account/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"account",
+										"create"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": \"exception\",\n    \"code\": 9,\n    \"message\": \"NO SE PROPORCIONO LA CURP\"\n}"
+						},
+						{
+							"name": "In Process",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idClient\":\"111222333\",\r\n    \"client\":{\r\n        \"paternalName\":\"ROMERO\",\r\n        \"maternalName\":\"GAYTAN\",\r\n        \"firstName\":\"ANGELICA\",\r\n        \"birthDate\":19760224,\r\n        \"birthPlace\":\"09\",\r\n        \"gender\":\"F\",\r\n        \"curp\":\"ROGA760224MDFBTD09\",\r\n        \"telephone\":5557864590,\r\n        \"email\":\"angelica.romero@hotmail.com\",\r\n        \"streetAddress\":\"ALBA\",\r\n        \"premise\":\"55-B\",\r\n        \"subPremise\":\"1A\",\r\n        \"postalCode\":\"11000\",\r\n        \"neighborhood\":\"09003049100716\",\r\n        \"numberId\":\"2898403\",\r\n        \"dateExpeditionNumberId\":20130120,\r\n        \"dateExpirationNumberId\":20220405,\r\n        \"channel\":\"04\",\r\n        \"rfc\":\"ABCDEFGHI1234\"\r\n    },\r\n    \"documents\":{\r\n        \"identification\":\"data:image/jpeg;base64,/9j/4AAQSkZJR...\",\r\n        \"proofAddress\":\"data:application/pdf;base64,JVBERi0xLj...\",\r\n        \"selfie\":\"data:image/jpeg;base64,/9j/4AAQSkZJR...\"\r\n    }\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/account/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"account",
+										"create"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"status\":\"success\",\r\n    \"message\":\"Registro en proceso\",\r\n    \"idClient\":\"111222333\",\r\n    \"idAccount\":\"000000000\",\r\n    \"CLABE\": \"123456789012345678\",\r\n    \"prn\":\"2345234534\"\r\n}"
+						},
+						{
+							"name": "Error 8",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idClient\":\"123312123\",\r\n    \"client\":{\r\n        \"paternalName\":\"ROMERO\",\r\n        \"maternalName\":\"GAYTAN\",\r\n        \"firstName\":\"ANGELICA\",\r\n        \"birthDate\":11111111,\r\n        \"birthPlace\":\"09\",\r\n        \"gender\":\"F\",\r\n        \"curp\":\"ROGA760224MDFBTD09\",\r\n        \"telephone\":5557864590,\r\n        \"email\":\"angelica.romero@hotmail.com\",\r\n        \"streetAddress\":\"ALBA\",\r\n        \"premise\":\"55-B\",\r\n        \"subPremise\":\"1A\",\r\n        \"postalCode\":\"11000\",\r\n        \"neighborhood\":\"09003049100716\",\r\n        \"numberId\":\"2898403\",\r\n        \"dateExpeditionNumberId\":20130120,\r\n        \"dateExpirationNumberId\":20220405,\r\n        \"channel\":\"04\",\r\n        \"rfc\":\"ABCDEFGHI1234\"\r\n    },\r\n    \"documents\":{\r\n        \"identification\":\"data:image/jpeg;base64,/9j/4AAQSkZJR...\",\r\n        \"proofAddress\":\"data:application/pdf;base64,JVBERi0xLj...\",\r\n        \"selfie\":\"data:image/jpeg;base64,/9j/4AAQSkZJR...\"\r\n    }\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/account/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"account",
+										"create"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": \"exception\",\n    \"code\": 8,\n    \"message\": \"FECHAS DE NACIMIENTO NO COINCIDEN\"\n}"
+						},
+						{
+							"name": "Error 13",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idClient\":\"\",\r\n    \"client\":{},\r\n    \"documents\":{}\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/account/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"account",
+										"create"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": \"exception\",\n    \"code\": 13,\n    \"message\": \"ERROR EN JSON DE ENTRADA\"\n}"
+						},
+						{
+							"name": "Error 5_name",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idClient\":\"123312123\",\r\n    \"client\":{\r\n        \"paternalName\":\"ROMERO\",\r\n        \"maternalName\":\"GAYTAN\",\r\n        \"firstName\":\"\",\r\n        \"birthDate\":19760224,\r\n        \"birthPlace\":\"09\",\r\n        \"gender\":\"F\",\r\n        \"curp\":\"ROGA760224MDFBTD09\",\r\n        \"telephone\":5557864590,\r\n        \"email\":\"angelica.romero@hotmail.com\",\r\n        \"streetAddress\":\"ALBA\",\r\n        \"premise\":\"55-B\",\r\n        \"subPremise\":\"1A\",\r\n        \"postalCode\":\"11000\",\r\n        \"neighborhood\":\"09003049100716\",\r\n        \"numberId\":\"2898403\",\r\n        \"dateExpeditionNumberId\":20130120,\r\n        \"dateExpirationNumberId\":20220405,\r\n        \"channel\":\"04\",\r\n        \"rfc\":\"ABCDEFGHI1234\"\r\n    },\r\n    \"documents\":{\r\n        \"identification\":\"data:image/jpeg;base64,/9j/4AAQSkZJR...\",\r\n        \"proofAddress\":\"data:application/pdf;base64,JVBERi0xLj...\",\r\n        \"selfie\":\"data:image/jpeg;base64,/9j/4AAQSkZJR...\"\r\n    }\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/account/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"account",
+										"create"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": \"exception\",\n    \"code\": 5,\n    \"message\": \"NO COINCIDE ALGUNO DE LOS NOMBRES\"\n}"
+						},
+						{
+							"name": "Error 14",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/account/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"account",
+										"create"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": \"exception\",\n    \"code\": 14,\n    \"message\": \"OCURRIO UN PROBLEMA AL ACCEDER AL CORE\"\n}"
+						},
+						{
+							"name": "Error 7",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idClient\":\"123312123\",\r\n    \"client\":{\r\n        \"paternalName\":\"ROMERO\",\r\n        \"maternalName\":\"GAYTAN\",\r\n        \"firstName\":\"ANGELICA\",\r\n        \"birthDate\":19760224,\r\n        \"birthPlace\":\"09\",\r\n        \"gender\":\"F\",\r\n        \"curp\":\"ROGA760224MDFBTD09\",\r\n        \"telephone\":5557864590,\r\n        \"email\":\"angelica.romero@hotmail.com\",\r\n        \"streetAddress\":\"ALBA\",\r\n        \"premise\":\"55-B\",\r\n        \"subPremise\":\"1A\",\r\n        \"postalCode\":\"11000\",\r\n        \"neighborhood\":\"09003049100716\",\r\n        \"numberId\":\"2898403\",\r\n        \"dateExpeditionNumberId\":\"\",\r\n        \"dateExpirationNumberId\":\"\",\r\n        \"channel\":\"04\",\r\n        \"rfc\":\"ABCDEFGHI1234\"\r\n    },\r\n    \"documents\":{\r\n        \"identification\":\"data:image/jpeg;base64,/9j/4AAQSkZJR...\",\r\n        \"proofAddress\":\"data:application/pdf;base64,JVBERi0xLj...\",\r\n        \"selfie\":\"data:image/jpeg;base64,/9j/4AAQSkZJR...\"\r\n    }\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/account/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"account",
+										"create"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": \"exception\",\n    \"code\": 7,\n    \"message\": \"PROBLEMAS EN LA CONVERSION DE LA FECHA\"\n}"
+						},
+						{
+							"name": "Error 11",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idClient\":\"121212121\",\r\n    \"client\":{\r\n        \"paternalName\":\"ROMERO\",\r\n        \"maternalName\":\"GAYTAN\",\r\n        \"firstName\":\"ANGELICA\",\r\n        \"birthDate\":19760224,\r\n        \"birthPlace\":\"09\",\r\n        \"gender\":\"F\",\r\n        \"curp\":\"ROGA760224MDFBTD09\",\r\n        \"telephone\":5557864590,\r\n        \"email\":\"angelica.romero@hotmail.com\",\r\n        \"streetAddress\":\"ALBA\",\r\n        \"premise\":\"55-B\",\r\n        \"subPremise\":\"1A\",\r\n        \"postalCode\":\"11000\",\r\n        \"neighborhood\":\"09003049100716\",\r\n        \"numberId\":\"2898403\",\r\n        \"dateExpeditionNumberId\":20130120,\r\n        \"dateExpirationNumberId\":20220405,\r\n        \"channel\":\"04\",\r\n        \"rfc\":\"ABCDEFGHI1234\"\r\n    },\r\n    \"documents\":{\r\n        \"identification\":\"data:image/jpeg;base64,/9j/4AAQSkZJR...\",\r\n        \"proofAddress\":\"data:application/pdf;base64,JVBERi0xLj...\",\r\n        \"selfie\":\"data:image/jpeg;base64,/9j/4AAQSkZJR...\"\r\n    }\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/account/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"account",
+										"create"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": \"exception\",\n    \"code\": 11,\n    \"message\": \"CONSULTA RENAPO NO EXITOSA\"\n}"
+						},
+						{
+							"name": "Error 3",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-mock-match-request-body",
+										"value": "true",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idClient\":\"000000000\",\r\n    \"client\":{\r\n        \"paternalName\":\"ROMERO\",\r\n        \"maternalName\":\"GAYTAN\",\r\n        \"firstName\":\"ANGELICA\",\r\n        \"birthDate\":19760224,\r\n        \"birthPlace\":\"09\",\r\n        \"gender\":\"F\",\r\n        \"curp\":\"ROGA760224MDFBTD09\",\r\n        \"telephone\":5557864590,\r\n        \"email\":\"angelica.romero@hotmail.com\",\r\n        \"streetAddress\":\"ALBA\",\r\n        \"premise\":\"55-B\",\r\n        \"subPremise\":\"1A\",\r\n        \"postalCode\":\"11000\",\r\n        \"neighborhood\":\"09003049100716\",\r\n        \"numberId\":\"2898403\",\r\n        \"dateExpeditionNumberId\":20130120,\r\n        \"dateExpirationNumberId\":20220405,\r\n        \"channel\":\"04\",\r\n        \"rfc\":\"ABCDEFGHI1234\"\r\n    },\r\n    \"documents\":{\r\n        \"identification\":\"data:image/jpeg;base64,/9j/4AAQSkZJR...\",\r\n        \"proofAddress\":\"data:application/pdf;base64,JVBERi0xLj...\",\r\n        \"selfie\":\"data:image/jpeg;base64,/9j/4AAQSkZJR...\"\r\n    }\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/basas/account/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"basas",
+										"account",
+										"create"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n    \"status\": \"exception\",\r\n    \"code\": 3,\r\n    \"message\": \"REFERENCIA ABC-RENAPO INVÁLIDA\"\r\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
