@@ -9,7 +9,7 @@ Creacion de una cuenta Nivel 2 y envio de Documentacion para KYC.
 
 ### Create Account
 
-POST http://mokup.abc4fintech.com/basas/account/create
+POST https://650787bf-424b-4d5e-89c8-5e8982fe58e9.mock.pstmn.io/basas/account/create
     
 #### Request
 
@@ -149,7 +149,7 @@ Lanzar transacciones via SPEI (Sistema de Pagos Electrónicos Interbancarios).
 
 ### Send SPEI
 
-POST http://mokup.abc4fintech.com/basas/transaction/spei
+POST https://650787bf-424b-4d5e-89c8-5e8982fe58e9.mock.pstmn.io/basas/transaction/spei
     
 #### Request
 
@@ -260,7 +260,7 @@ POST http://mokup.abc4fintech.com/basas/client/destination
 
 ### Modify Destination Account
 
-PUT http://mokup.abc4fintech.com/basas/client/destination/[id]
+PUT https://650787bf-424b-4d5e-89c8-5e8982fe58e9.mock.pstmn.io/basas/client/destination/[id]
     
 #### Request
 
@@ -292,7 +292,7 @@ PUT http://mokup.abc4fintech.com/basas/client/destination/[id]
 
 ### Unlink Destination Account
 
-DELETE http://mokup.abc4fintech.com/basas/client/destination/[id]
+DELETE https://650787bf-424b-4d5e-89c8-5e8982fe58e9.mock.pstmn.io/basas/client/destination/[id]
     
 #### Request
 
@@ -442,7 +442,7 @@ Todo lo relacionado a catalogos e informacion establecida por el ABC.
 
 ### Bank Catalog
 
-POST http://mokup.abc4fintech.com/basas/catalog/bank
+POST https://650787bf-424b-4d5e-89c8-5e8982fe58e9.mock.pstmn.io/basas/catalog/bank
     
 #### Request
 
