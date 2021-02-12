@@ -10,6 +10,12 @@ Creacion de una cuenta Nivel 2 y envio de Documentacion para KYC.
 ### Create Account
 
 POST https://650787bf-424b-4d5e-89c8-5e8982fe58e9.mock.pstmn.io/basas/account/create
+
+#### Headers
+
+    x-api-key:PMAK-6022d317fec5d80029707e86-37ec0d93820a2f78d0d34975b401594f10
+    x-mock-match-request-body:true
+    Content-Type:application/json
     
 #### Request
 
@@ -150,7 +156,13 @@ Lanzar transacciones via SPEI (Sistema de Pagos Electrónicos Interbancarios).
 ### Send SPEI
 
 POST https://650787bf-424b-4d5e-89c8-5e8982fe58e9.mock.pstmn.io/basas/transaction/spei
-    
+
+#### Headers
+
+    x-api-key:PMAK-6022d317fec5d80029707e86-37ec0d93820a2f78d0d34975b401594f10
+    x-mock-match-request-body:true
+    Content-Type:application/json
+
 #### Request
 
     {
@@ -227,7 +239,13 @@ Enlace a cuentas destino para transaccionar recurrentes.
 
 ### Link Destination Account
 
-POST http://mokup.abc4fintech.com/basas/client/destination
+POST https://650787bf-424b-4d5e-89c8-5e8982fe58e9.mock.pstmn.io/basas/client/destination
+
+#### Headers
+
+    x-api-key:PMAK-6022d317fec5d80029707e86-37ec0d93820a2f78d0d34975b401594f10
+    x-mock-match-request-body:true
+    Content-Type:application/json
     
 #### Request
 
@@ -261,6 +279,12 @@ POST http://mokup.abc4fintech.com/basas/client/destination
 ### Modify Destination Account
 
 PUT https://650787bf-424b-4d5e-89c8-5e8982fe58e9.mock.pstmn.io/basas/client/destination/[id]
+
+#### Headers
+
+    x-api-key:PMAK-6022d317fec5d80029707e86-37ec0d93820a2f78d0d34975b401594f10
+    x-mock-match-request-body:true
+    Content-Type:application/json
     
 #### Request
 
@@ -293,6 +317,12 @@ PUT https://650787bf-424b-4d5e-89c8-5e8982fe58e9.mock.pstmn.io/basas/client/dest
 ### Unlink Destination Account
 
 DELETE https://650787bf-424b-4d5e-89c8-5e8982fe58e9.mock.pstmn.io/basas/client/destination/[id]
+
+#### Headers
+
+    x-api-key:PMAK-6022d317fec5d80029707e86-37ec0d93820a2f78d0d34975b401594f10
+    x-mock-match-request-body:true
+    Content-Type:application/json
     
 #### Request
 
@@ -443,6 +473,12 @@ Todo lo relacionado a catalogos e informacion establecida por el ABC.
 ### Bank Catalog
 
 POST https://650787bf-424b-4d5e-89c8-5e8982fe58e9.mock.pstmn.io/basas/catalog/bank
+
+#### Headers
+
+    x-api-key:PMAK-6022d317fec5d80029707e86-37ec0d93820a2f78d0d34975b401594f10
+    x-mock-match-request-body:true
+    Content-Type:application/json
     
 #### Request
 
