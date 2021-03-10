@@ -73,7 +73,7 @@ Sandbox:
 
 |CODE|MESSAGE|
 |-----------|-----------|
-|201|Registro en proceso|
+|200|Registro en proceso|
 
 
 **Success EVENT list** 
