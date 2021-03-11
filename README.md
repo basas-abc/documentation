@@ -544,3 +544,42 @@ POST https://650787bf-424b-4d5e-89c8-5e8982fe58e9.mock.pstmn.io/basas/catalog/ba
 |-----------|-----------|-----------|-----------|-----------|-----------|
 |id|3|alphanumeric|optional|001|Id de la institución|
 |bank|10|alphanumeric|optional|banco...nombre|Nombre Corto de la Institución|
+
+## Catalogos:
+
+### Entidades Federativas
+
+| ID | ESTADO                          |
+|----|---------------------------------|
+| 1  | AGUASCALIENTES                  |
+| 2  | BAJA CALIFORNIA                 |
+| 3  | BAJA CALIFORNIA SUR             |
+| 4  | CAMPECHE                        |
+| 5  | COAHUILA DE ZARAGOZA            |
+| 6  | COLIMA                          |
+| 7  | CHIAPAS                         |
+| 8  | CHIHUAHUA                       |
+| 9  | CIUDAD DE MEXICO                |
+| 10 | DURANGO                         |
+| 11 | GUANAJUATO                      |
+| 12 | GUERRERO                        |
+| 13 | HIDALGO                         |
+| 14 | JALISCO                         |
+| 15 | MEXICO                          |
+| 16 | MICHOACAN DE OCAMPO             |
+| 17 | MORELOS                         |
+| 18 | NAYARIT                         |
+| 19 | NUEVO LEON                      |
+| 20 | OAXACA                          |
+| 21 | PUEBLA                          |
+| 22 | QUERETARO                       |
+| 23 | QUINTANA ROO                    |
+| 24 | SAN LUIS POTOSI                 |
+| 25 | SINALOA                         |
+| 26 | SONORA                          |
+| 27 | TABASCO                         |
+| 28 | TAMAULIPAS                      |
+| 29 | TLAXCALA                        |
+| 30 | VERACRUZ DE IGNACIO DE LA LLAVE |
+| 31 | YUCATAN                         |
+| 32 | ZACATECAS                       |
