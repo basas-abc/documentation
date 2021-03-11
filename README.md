@@ -1,6 +1,6 @@
 ## información importante:
 
-**Para poder hacer uso del API es necesario contar un perfil Mexicano. **
+**Para poder hacer uso del API es necesario contar un perfil Mexicano.**
 
     - Nombre
     - Apellidos
