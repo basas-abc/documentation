@@ -1,25 +1,42 @@
 # ABCD API v1.0
 
+## Informacion importante:
+
+**Para poder hacer uso del API es necesario contar un perfil Mexicano.**
+
+    - Nombre
+    - Apellidos
+    - CURP
+    - Entidad federal del Pais
+
+## Instalar Coleccion en Postman:
+
+1. Crea un Entorno Sandbox de ABCD Sandbox
+2. Descarga ABCD_colection_postman.json 
+5. Importar la Collecion ABCD_colection_postman.json en postman
+6. Posicionar el Entorno Sandbox de ABCD Sandbox
+7. Revisar que en Create Account Endpoint Headers el campo x-api-key incluya la API Key de Sandbox
+
 ## Enrollement
 ----------
 
 **Description:**
 
-Creacion de una cuenta Nivel 2 y envio de Documentacion para KYC.
+Creacion de una cuenta Nivel 2 ABC Capital, Galileo y envio de Documentacion para KYC.
 
 ### Create Account
-Mock:
-POST https://650787bf-424b-4d5e-89c8-5e8982fe58e9.mock.pstmn.io/basas/account/create
 
-Sandbox:
-POST https://nkcmhwm54b.execute-api.us-east-1.amazonaws.com/sandbox/account/create
+#### Service URL:
 
-## API Key
-Mock:
-    PMAK-6022d317fec5d80029707e86-37ec0d93820a2f78d0d34975b401594f10
+    /account/create
 
-Sandbox:
-    HNWlpPY3Xt36w9DZoGoPX8afFcxCrdp4sfsAMb8f
+#### URL:
+
+    Sandbox: POST https://nkcmhwm54b.execute-api.us-east-1.amazonaws.com/sandbox
+
+#### API Key:
+
+    Sandbox: HNWlpPY3Xt36w9DZoGoPX8afFcxCrdp4sfsAMb8f
 
 #### Headers
 
@@ -31,19 +48,19 @@ Sandbox:
 
 {
     "client": {
-        "paternalName": "cambeses",
-        "maternalName": "del cueto",
-        "firstName": "ramón",
+        "paternalName": "Paternal Name",
+        "maternalName": "Maternal Name",
+        "firstName": "Name ",
         "birthDate": 19701103,
         "birthPlace": "24",
         "gender": "M",
-        "curp": "CACR701103HSPMTM03",
-        "telephone": 9985774007,
-        "email": "rcambeses@hotmail.com",
+        "curp": "AAAA701103FSPMTM02",
+        "telephone": 5585774007,
+        "email": "test@hotmail.com",
         "streetAddress": "salaverry",
         "premise": "1123",
         "subPremise": "1A",
-        "postalCode": "07300",
+        "postalCode": "07310",
         "neighborhood": "09005073001072",
         "numberId": "2898403",
         "dateExpeditionNumberId": 20130120,
