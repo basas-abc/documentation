@@ -1,3 +1,17 @@
+# ABCD API v1.0
+
+### Contenido:
+
+**- Instalacion**
+
+**- Endpoints**
+
+    - Enrollement
+    - SPEI
+    - Destination Account
+
+**- Catalogos**
+
 ## información importante:
 
 **Para poder hacer uso del API es necesario contar un perfil Mexicano.**
@@ -11,7 +25,7 @@
 
 1. Crea un Entorno Sandbox de ABCD Sandbox
 2. Descarga ABCD_colection_postman.json 
-5. Importar la Collecion ABCD_colection_postman.json en postman
+5. Importar la Collecion [ABCD_colection_postman.json](https://github.com/abc-capital-digital/documentation/blob/b4dab24ab4fc97b0ea171ac4a056654ae24d2e92/ABCD.postman_collection.json) en postman
 6. Posicionar el Entorno Sandbox de ABCD Sandbox
 7. Revisar que en Create Account Endpoint Headers el campo x-api-key incluya la API Key de Sandbox
 
@@ -29,7 +43,7 @@ Creacion de una cuenta Nivel 2 ABC Capital, Galileo y envio de Documentacion par
 
 #### URL:
 
-    Sandbox: POST https://nkcmhwm54b.execute-api.us-east-1.amazonaws.com/sandbox
+Sandbox: POST [https://nkcmhwm54b.execute-api.us-east-1.amazonaws.com/sandbox](https://nkcmhwm54b.execute-api.us-east-1.amazonaws.com/sandbox)
 
 #### API Key:
 
