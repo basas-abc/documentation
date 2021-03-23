@@ -11,9 +11,9 @@ ABCD API v1.0
 
 - Endpoints
 
- - Enrollement
- - SPEI
- - Destination Account
+  - Enrollement
+  - SPEI
+  - Destination Account
 
 - Catalogos
 
