@@ -1,16 +1,25 @@
-# ABCD API v1.0
+ABCD API v1.0
+-------------
 
-### Contenido:
 
-**- Instalacion**
+----------
 
-**- Endpoints**
 
-    - Enrollement
-    - SPEI
-    - Destination Account
+**Contenido:**
 
-**- Catalogos**
+- Instalacion
+
+- Endpoints
+
+ - Enrollement
+ - SPEI
+ - Destination Account
+
+- Catalogos
+
+
+----------
+
 
 ## información importante:
 
@@ -29,31 +38,35 @@
 6. Posicionar el Entorno Sandbox de ABCD Sandbox
 7. Revisar que en Create Account Endpoint Headers el campo x-api-key incluya la API Key de Sandbox
 
+### Host:
+
+Sandbox: POST [https://nkcmhwm54b.execute-api.us-east-1.amazonaws.com/sandbox](https://nkcmhwm54b.execute-api.us-east-1.amazonaws.com/sandbox)
+
+### API Key:
+
+    Sandbox: HNWlpPY3Xt36w9DZoGoPX8afFcxCrdp4sfsAMb8f
+
+### Headers
+
+    x-api-key: [API KEY]
+    x-mock-match-request-body:[true: Mock | false: Sandbox, Production]
+    Content-Type:application/json
+
+
+----------
+
+
 ## Enrollement
 
 **Description:**
 
 Creacion de una cuenta Nivel 2 ABC Capital, Galileo y envio de Documentacion para KYC.
-
+    
 ### Create Account
 
-#### Service URL:
+#### Service:
 
     /account/create
-
-#### URL:
-
-Sandbox: POST [https://nkcmhwm54b.execute-api.us-east-1.amazonaws.com/sandbox](https://nkcmhwm54b.execute-api.us-east-1.amazonaws.com/sandbox)
-
-#### API Key:
-
-    Sandbox: HNWlpPY3Xt36w9DZoGoPX8afFcxCrdp4sfsAMb8f
-
-#### Headers
-
-    x-api-key: [API KEY]
-    x-mock-match-request-body:[true: Mock | false: Sandbox, Production]
-    Content-Type:application/json
     
 #### Request
 ``
@@ -72,7 +85,7 @@ Sandbox: POST [https://nkcmhwm54b.execute-api.us-east-1.amazonaws.com/sandbox](h
             "premise": "1123",
             "subPremise": "1A",
             "postalCode": "07310",
-            "neighborhood": "09005073001072",
+            "neighborhood": "Bosques de Morelos",
             "numberId": "2898403",
             "dateExpeditionNumberId": 20130120,
             "dateExpirationNumberId": 20210405,
@@ -184,22 +197,28 @@ Sandbox: POST [https://nkcmhwm54b.execute-api.us-east-1.amazonaws.com/sandbox](h
 |proofAddress|-|alphanumeric|mandatory|-|Comprobante de Domicilio|
 |selfie|-|alphanumeric|mandatory|-|Prueba de Vida|
 
-## SPEI Transfer
+## Transactions
 ----------
+
+### SPEI
 
 **Description:**
 
 Lanzar transacciones via SPEI (Sistema de Pagos Electrónicos Interbancarios).
 
-### Send SPEI
+### SPEI EXPRESS
 
-POST https://650787bf-424b-4d5e-89c8-5e8982fe58e9.mock.pstmn.io/basas/transaction/spei
+**NOTA:** Esta modalidad de SPEI, contiene mas datos, que deben ser llenados de forma obligatoria cada que se envie una solicitud.
 
-#### Headers
+    destination
+    beneficiaryName
+    idBank
+    typeAccount
 
-    x-api-key:PMAK-6022d317fec5d80029707e86-37ec0d93820a2f78d0d34975b401594f10
-    x-mock-match-request-body:true
-    Content-Type:application/json
+**Caracteristicas**
+
+    Monto maximo por cada transaccion: $8,000.00 M.N.
+    Cualquier Horario.
 
 #### Request
 
@@ -214,8 +233,36 @@ POST https://650787bf-424b-4d5e-89c8-5e8982fe58e9.mock.pstmn.io/basas/transactio
        "reference":"1234567",
        "channel":"001",
        "geolocation":"44.244167,7.769444",
-       "signing":"Important! - See the documentation Encryption signature.",
+       "signing":"Important! - See the documentation Encryption signature."
     }
+    
+### SPEI SIMPLE
+
+**IMPORTANTE:** Esta modalidad de SPEI, solo puede ser enviada SI previamente se hizo un LINK DESTINATION ACCOUNT, y los mismos parametros que se enviaron deben de ser enviados, para consultar estos datos, REVISAR el Listado de DESTINATION ACCOUNTS.
+
+    destination
+
+**Caracteristicas**
+
+        Monto maximo por cada transaccion: $200,000.00 M.N.
+        Solo aplica el monto maxino antes de las 6:00PM Hora de Mexico.
+    
+#### Request
+
+    {
+       "origin":"1323123312312",
+       "destination":"789789789789",
+       "amount":"MXN300.00",
+       "concept":"Concepto de Pago",
+       "reference":"1234567",
+       "channel":"001",
+       "geolocation":"44.244167,7.769444",
+       "signing":"Important! - See the documentation Encryption signature."
+    }
+ 
+#### Service:
+
+    /transaction/spei
 
 #### Response Success
 
@@ -277,13 +324,9 @@ Enlace a cuentas destino para transaccionar recurrentes.
 
 ### Link Destination Account
 
-POST https://650787bf-424b-4d5e-89c8-5e8982fe58e9.mock.pstmn.io/basas/client/destination
+#### Service:
 
-#### Headers
-
-    x-api-key:PMAK-6022d317fec5d80029707e86-37ec0d93820a2f78d0d34975b401594f10
-    x-mock-match-request-body:true
-    Content-Type:application/json
+    /client/destination
     
 #### Request
 
@@ -293,7 +336,7 @@ POST https://650787bf-424b-4d5e-89c8-5e8982fe58e9.mock.pstmn.io/basas/client/des
        "beneficiary":"Juan Perez Perez",
        "rfc":"ABCDE123456",
        "email":"test@abc.com.mx",
-       "channel":"001",
+       "channel":"001"
     }
 
 #### Response Success
@@ -301,7 +344,7 @@ POST https://650787bf-424b-4d5e-89c8-5e8982fe58e9.mock.pstmn.io/basas/client/des
     {
         "status":"success",
         "message":"linked account",
-        "idBeneficiary":"12345678",
+        "idBeneficiary":"12345678"
     }
 
 **Success Code Http** 
@@ -316,13 +359,9 @@ POST https://650787bf-424b-4d5e-89c8-5e8982fe58e9.mock.pstmn.io/basas/client/des
 
 ### Modify Destination Account
 
-PUT https://650787bf-424b-4d5e-89c8-5e8982fe58e9.mock.pstmn.io/basas/client/destination/[id]
+#### Service:
 
-#### Headers
-
-    x-api-key:PMAK-6022d317fec5d80029707e86-37ec0d93820a2f78d0d34975b401594f10
-    x-mock-match-request-body:true
-    Content-Type:application/json
+    /client/destination/121412431
     
 #### Request
 
@@ -332,7 +371,7 @@ PUT https://650787bf-424b-4d5e-89c8-5e8982fe58e9.mock.pstmn.io/basas/client/dest
        "beneficiary":"Juan Perez Perez",
        "rfc":"ABCDE123456",
        "email":"test@abc.com.mx",
-       "channel":"001",
+       "channel":"001"
     }
 
 #### Response Success
@@ -354,13 +393,9 @@ PUT https://650787bf-424b-4d5e-89c8-5e8982fe58e9.mock.pstmn.io/basas/client/dest
 
 ### Unlink Destination Account
 
-DELETE https://650787bf-424b-4d5e-89c8-5e8982fe58e9.mock.pstmn.io/basas/client/destination/[id]
+#### Service:
 
-#### Headers
-
-    x-api-key:PMAK-6022d317fec5d80029707e86-37ec0d93820a2f78d0d34975b401594f10
-    x-mock-match-request-body:true
-    Content-Type:application/json
+    /client/destination/1000100581.002180700600012331
     
 #### Request
 
@@ -372,7 +407,7 @@ DELETE https://650787bf-424b-4d5e-89c8-5e8982fe58e9.mock.pstmn.io/basas/client/d
 
         {
             "status":"success",
-            "message":"unlinked account",
+            "message":"unlinked account"
         }
 
 **Success Code Http** 
@@ -508,15 +543,10 @@ El alfabeto empleado en la codificación base 64 a utilizar se expresa en el sig
 
 Todo lo relacionado a catalogos e informacion establecida por el ABC.
 
-### Bank Catalog
+#### Service:
 
-POST https://650787bf-424b-4d5e-89c8-5e8982fe58e9.mock.pstmn.io/basas/catalog/bank
+    /catalog/bank
 
-#### Headers
-
-    x-api-key:PMAK-6022d317fec5d80029707e86-37ec0d93820a2f78d0d34975b401594f10
-    x-mock-match-request-body:true
-    Content-Type:application/json
     
 #### Request
 
@@ -539,6 +569,45 @@ POST https://650787bf-424b-4d5e-89c8-5e8982fe58e9.mock.pstmn.io/basas/catalog/ba
         },
     }
 
+### Definition of parameters
+
+|FIELD|SIZE|TYPE|REQUIRED|VALUES|DEFINITION|
+|-----------|-----------|-----------|-----------|-----------|-----------|
+|id|3|alphanumeric|optional|001|Id de la institución|
+|bank|10|alphanumeric|optional|banco...nombre|Nombre Corto de la Institución|
+    
+#### Service:
+
+    /catalog/neighborhood
+
+    
+#### Request
+
+    {
+       "postalCode":"54760"
+    }
+
+#### Response Success
+    {
+        {
+            "id":"42344",
+            "name":"Bosques de Morelos",
+            "city":"Cuautitlan Izcalli",
+            "state":"Edomex",
+        },
+        {
+            "id":"034603",
+            "name":"3 de Mayo",
+            "city":"Cuautitlan Izcalli",
+            "state":"Edomex",
+        },
+    }
+
+### Definition of parameters
+
+|FIELD|SIZE|TYPE|REQUIRED|VALUES|DEFINITION|
+|-----------|-----------|-----------|-----------|-----------|-----------|
+|postalCode|5|alphanumeric|mandatory|54760|Código Postale|
 
 **Success Code Http** 
 
@@ -552,14 +621,7 @@ POST https://650787bf-424b-4d5e-89c8-5e8982fe58e9.mock.pstmn.io/basas/catalog/ba
 |-----------|-----------|
 |400|Problemas para obtener el catalogo|
 
-### Definition of parameters
-
-|FIELD|SIZE|TYPE|REQUIRED|VALUES|DEFINITION|
-|-----------|-----------|-----------|-----------|-----------|-----------|
-|id|3|alphanumeric|optional|001|Id de la institución|
-|bank|10|alphanumeric|optional|banco...nombre|Nombre Corto de la Institución|
-
-## Catalogos:
+## Catalogos fijos:
 
 ### Entidades Federativas
 
@@ -597,3 +659,12 @@ POST https://650787bf-424b-4d5e-89c8-5e8982fe58e9.mock.pstmn.io/basas/catalog/ba
 | 30 | VERACRUZ DE IGNACIO DE LA LLAVE |
 | 31 | YUCATAN                         |
 | 32 | ZACATECAS                       |
+
+### Tipos de Cuenta
+
+| ID | ESTADO                          | LONGITUD |
+|----|---------------------------------|---|
+| 0  | CUENTA                  |11|
+| 3  | TARJETA DEBITO             |16|
+| 10  | CELULAR             |10|
+| 40  | CLABE             |18|
