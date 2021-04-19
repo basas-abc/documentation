@@ -85,7 +85,7 @@ Creacion de una cuenta Nivel 2 ABC Capital, Galileo y envio de Documentacion par
             "premise": "1123",
             "subPremise": "1A",
             "postalCode": "07310",
-            "neighborhood": "Bosques de Morelos",
+            "neighborhood": "15121547603120",
             "numberId": "2898403",
             "dateExpeditionNumberId": 20130120,
             "dateExpirationNumberId": 20210405,
@@ -188,7 +188,7 @@ Creacion de una cuenta Nivel 2 ABC Capital, Galileo y envio de Documentacion par
 |premise|35|alphanumeric|mandatory|-|No. Exterior|
 |subPremise|35|alphanumeric|mandatory|-|No. Interior|
 |postalCode|5|alphanumeric|mandatory|-|Código Postal|
-|neighborhood|15|alphanumeric|mandatory|-|Colonia|
+|neighborhood|15|alphanumeric|mandatory|15121547603120|Id de la Colonia, Se obtiene del Servicio de /catalog/neighborhood|
 |numberId|20|alphanumeric|mandatory|-|Número de Identificación|
 |dateExpeditionNumberId|8|numeric|mandatory|AAAAMMDD|Fecha de Expedición de la Identificación|
 |dateExpirationNumberId|8|numeric|mandatory|AAAAMMDD|Fecha de Vencimiento de la Identificación|
@@ -586,30 +586,24 @@ Todo lo relacionado a catalogos e informacion establecida por el ABC.
 #### Request
 
     {
-       "postalCode":"54760"
+      "postalCode": "54760",
+      "name": "Bosques de morelos"
     }
-
 #### Response Success
     {
-        {
-            "id":"42344",
-            "name":"Bosques de Morelos",
-            "city":"Cuautitlan Izcalli",
-            "state":"Edomex",
-        },
-        {
-            "id":"034603",
-            "name":"3 de Mayo",
-            "city":"Cuautitlan Izcalli",
-            "state":"Edomex",
-        },
+        "idNeighborhood": "15121547603120",
+        "idState": "15",
+        "idCity": "1504",
+        "idMunicipality": "15121",
+        "idCountry": "MX"
     }
 
 ### Definition of parameters
 
 |FIELD|SIZE|TYPE|REQUIRED|VALUES|DEFINITION|
 |-----------|-----------|-----------|-----------|-----------|-----------|
-|postalCode|5|alphanumeric|mandatory|54760|Código Postale|
+|postalCode|5|numeric|mandatory|54760|Código Postale|
+|name|60|alphanumeric|mandatory|Bosques de Morelos|Nombre de Colonia|
 
 **Success Code Http** 
 
