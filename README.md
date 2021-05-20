@@ -171,36 +171,48 @@ Creacion de una cuenta Nivel 2 ABC Capital, Galileo y envio de Documentacion par
 |15|NO SE REALIZO EL ALTA|
 
 ### Definicion de campos
+|FIELD|SIZE|TYPE|REQUIRED|VALUES|DEFINITION|SOURCE FORM|SOURCE OCR|SOURCE DEVICE|
+|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
+|idClient|15|alphanumeric|optional|-|Identificador de Cliente|Hide|-|-|
+|paternalName|35|alphanumeric|mandatory|-|Apellido Paterno|✔️|-|-|
+|maternalName|35|alphanumeric|mandatory|-|Apellido Materno|✔️|-|-|
+|firstName|35|alphanumeric|mandatory|-|Nombres|✔️|-|-|
+|birthDate|8|numeric|mandatory|AAAAMMDD|Fecha de Nacimiento|✔️|-|-|
+|birthPlace|2|alphanumeric|mandatory|-|Lugar de Nacimiento|✔️|-|-|
+|gender|1|alphanumeric|mandatory|F, M|Genero|✔️|-|-|
+|curp|18|alphanumeric|mandatory|-|CURP|✔️|-|-|
+|telephone|10|numeric|mandatory|-|Número de Celular|✔️|-|-|
+|email|50|alphanumeric|mandatory|-|Correo electrónico|✔️|-|-|
+|streetAddress|35|alphanumeric|mandatory|-|Calle|✔️|-|-|
+|premise|35|alphanumeric|mandatory|-|No. Exterior|✔️|-|-|
+|subPremise|35|alphanumeric|optional|-|No. Interior|✔️|-|-|
+|postalCode|5|alphanumeric|mandatory|-|Código Postal|✔️|-|-|
+|neighborhood|15|alphanumeric|mandatory|15121547603120|Id de la Colonia, Se obtiene del Servicio de /catalog/neighborhood|✔️|-|-|
+|numberId|20|alphanumeric|mandatory|-|Número de Identificación|-|✔️|-|
+|dateExpeditionNumberId|8|numeric|mandatory|AAAAMMDD|Fecha de Expedición de la Identificación|-|✔️|-|
+|dateExpirationNumberId|8|numeric|mandatory|AAAAMMDD|Fecha de Vencimiento de la Identificación|-|✔️|-|
+|channel|2|numeric|mandatory|00|Número Asignado por ABC|Hide|-|-|
+|rfc|13|alphanumeric|optional|-|RFC|-|✔️|-|
+|geolocation|40|alphanumeric|mandatory|44.244167,7.769444|Datos del dispositivo al momento de instruir la transacción|-|-|✔️|
+|identification|-|alphanumeric|mandatory|-|Credencial del INE|-|✔️|-|
+|proofAddress|-|alphanumeric|mandatory|-|Comprobante de Domicilio|-|✔️|-|
+|selfie|-|alphanumeric|mandatory|-|Prueba de Vida|-|✔️|-|
 
-|FIELD|SIZE|TYPE|REQUIRED|VALUES|DEFINITION|
-|-----------|-----------|-----------|-----------|-----------|-----------|
-|idClient|15|alphanumeric|optional|-|Identificador de Cliente|
-|paternalName|35|alphanumeric|mandatory|-|Apellido Paterno|
-|maternalName|35|alphanumeric|mandatory|-|Apellido Materno|
-|firstName|35|alphanumeric|mandatory|-|Nombres|
-|birthDate|8|numeric|mandatory|AAAAMMDD|Fecha de Nacimiento|
-|birthPlace|2|alphanumeric|mandatory|-|Lugar de Nacimiento|
-|gender|1|alphanumeric|mandatory|F, M|Genero|
-|curp|18|alphanumeric|mandatory|-|CURP|
-|telephone|10|numeric|mandatory|-|Número de Celular|
-|email|50|alphanumeric|mandatory|-|Correo electrónico|
-|streetAddress|35|alphanumeric|mandatory|-|Calle|
-|premise|35|alphanumeric|mandatory|-|No. Exterior|
-|subPremise|35|alphanumeric|mandatory|-|No. Interior|
-|postalCode|5|alphanumeric|mandatory|-|Código Postal|
-|neighborhood|15|alphanumeric|mandatory|15121547603120|Id de la Colonia, Se obtiene del Servicio de /catalog/neighborhood|
-|numberId|20|alphanumeric|mandatory|-|Número de Identificación|
-|dateExpeditionNumberId|8|numeric|mandatory|AAAAMMDD|Fecha de Expedición de la Identificación|
-|dateExpirationNumberId|8|numeric|mandatory|AAAAMMDD|Fecha de Vencimiento de la Identificación|
-|channel|2|numeric|mandatory|00|Número Asignado por ABC|
-|rfc|13|alphanumeric|mandatory|-|RFC|
-|geolocation|40|alphanumeric|mandatory|44.244167,7.769444|Datos del dispositivo al momento de instruir la transacción|
-|identification|-|alphanumeric|mandatory|-|Credencial del INE|
-|proofAddress|-|alphanumeric|mandatory|-|Comprobante de Domicilio|
-|selfie|-|alphanumeric|mandatory|-|Prueba de Vida|
-
-## Transactions
+## Transfers
 ----------
+
+### Reglas de Transferencia
+
+    Aplica:
+    Trasferencias ABC a ABC o ABC a Otro
+
+    Casos de Uso:
+    - Transferencias Express solo aplican si son menores a $8,000.00 sin importar el Horario.
+    - Transferencias Mayores a $8,000.00 hasta $200,000.00 solo pueden hacerse si previamente se registró una cuenta Destino y teniendo en cuenta la restricciones Horarias.
+    - El Tiempo de alta de una cuenta destino es de 30 min.
+    - Después de las 6:01 PM Horario México solo se pueden hacer trasferencias de $8,000.00, sin o con Cuenta Registrara Hasta las 6:00AM del día Siguiente.
+
+
 
 ### SPEI
 
