@@ -609,34 +609,34 @@ Todos los Servicios bancarios disponibles como Tiempo Aire, Pagos Referenciados,
 
 #### Response:
 
-  [
-    {
-        "type": "biller",
-        "id": 13690,
-        "name": "MovistarPaquetesInternet",
-        "biller_type": "MXCell",
-        "bill_type": "phone_number",
-        "country": "MX",
-        "currency": "MXN",
-        "requires_name_on_account": false,
-        "hours_to_fulfill": 0,
-        "account_number_digits": "10",
-        "mask": "",
-        "can_check_balance": false,
-        "supports_partial_payments": false,
-        "has_xdata": false,
-        "available_topup_amounts": [
-            "10.00",
-            "30.00",
-            "60.00",
-            "80.00",
-            "120.00",
-            "200.00",
-            "300.00"
-        ],
-        "topup_commission": 0
-    }
-  ]
+    [
+        {
+            "type": "biller",
+            "id": 13690,
+            "name": "MovistarPaquetesInternet",
+            "biller_type": "MXCell",
+            "bill_type": "phone_number",
+            "country": "MX",
+            "currency": "MXN",
+            "requires_name_on_account": false,
+            "hours_to_fulfill": 0,
+            "account_number_digits": "10",
+            "mask": "",
+            "can_check_balance": false,
+            "supports_partial_payments": false,
+            "has_xdata": false,
+            "available_topup_amounts": [
+                "10.00",
+                "30.00",
+                "60.00",
+                "80.00",
+                "120.00",
+                "200.00",
+                "300.00"
+            ],
+            "topup_commission": 0
+        }
+    ]
 
 ## Encryption signature
 ---
