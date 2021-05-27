@@ -56,7 +56,9 @@ ABCD API v1.0
 
 Apertura de una cuenta Nivel 2 en ABC Capital, Galileo y envío de Documentación para KYC.
 
-  [1]: https://images-shared-team.s3.amazonaws.com/Service+single+SignUp-git.jpeg
+![enter image description here][2]
+
+  [2]: https://images-shared-team.s3.amazonaws.com/Service+single+SignUp-git.jpeg
 
 ### Register Simple
 
