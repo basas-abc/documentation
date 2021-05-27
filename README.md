@@ -65,7 +65,7 @@ Apertura de una cuenta Nivel 2 en ABC Capital, Galileo y envío de Documentació
 #### Service:
 
     /account/register
-    
+
 #### Request:
 
     {
@@ -588,6 +588,56 @@ Enlace a cuentas destino para transferencias recurrentes entre cuentas.
 |email|70|alphanumeric|optional|-|Email de beneficiario|
 |channel|3|numeric|mandatory|000|Número Asignado por ABC|
 
+
+## Banking Services
+----------
+
+**Description:**
+
+Todos los Servicios bancarios disponibles como Tiempo Aire, Pagos Referenciados, etc.
+
+### TopUps
+
+#### Service:
+
+    /services/topups
+
+#### Request:
+
+    {
+    }
+
+#### Response:
+
+  [
+    {
+        "type": "biller",
+        "id": 13690,
+        "name": "MovistarPaquetesInternet",
+        "biller_type": "MXCell",
+        "bill_type": "phone_number",
+        "country": "MX",
+        "currency": "MXN",
+        "requires_name_on_account": false,
+        "hours_to_fulfill": 0,
+        "account_number_digits": "10",
+        "mask": "",
+        "can_check_balance": false,
+        "supports_partial_payments": false,
+        "has_xdata": false,
+        "available_topup_amounts": [
+            "10.00",
+            "30.00",
+            "60.00",
+            "80.00",
+            "120.00",
+            "200.00",
+            "300.00"
+        ],
+        "topup_commission": 0
+    }
+  ]
+
 ## Encryption signature
 ---
 
@@ -660,7 +710,6 @@ La funcionalidad descrita en los estándares antes mencionados se encuentra impl
 El alfabeto empleado en la codificación base 64 a utilizar se expresa en el siguiente catálogo:
 
 ![enter image description here][1]
-
 
   [1]: https://shareimagess.s3-us-west-2.amazonaws.com/Picture1.png
   
