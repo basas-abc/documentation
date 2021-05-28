@@ -9,7 +9,7 @@ ABCD API v1.0
 
 - Endpoints
 
-  - Enrollement
+  - Account
   - SPEI
   - Destination Account
   - Servicios Bacarios
@@ -51,7 +51,7 @@ ABCD API v1.0
 
 ----------
 
-## Enrollement
+## Account
 
 **Description:**
 
