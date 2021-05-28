@@ -59,7 +59,7 @@ Apertura de una cuenta Nivel 2 en ABC Capital, Galileo y envío de Documentació
 
 ![enter image description here][2]
 
-  [2]: https://images-shared-team.s3.amazonaws.com/Service+single+SignUp-git.jpeg
+  [2]: https://images-shared-team.s3.amazonaws.com/Service+single+SignUp-last.jpeg
 
 ### Register Simple
 
@@ -154,6 +154,98 @@ Apertura de una cuenta Nivel 2 en ABC Capital, Galileo y envío de Documentació
         "CLABE": 002010077777777779,
         "prn": 14027000005,
         "code":"00"
+    }
+
+### Sign Terms & Condition and Geolocation [EN CONSTRUCCION ⚠️]
+
+#### Service:
+
+    /account/sign/privacy
+    
+#### Request:
+
+    {
+        "idDevice": "D5C5F59A-6183-4F22-B9F1-D26C0A46276E",
+        "sendTo": "3325418120",
+        "idCompany": "4AD8A2A7-57A4-4731-B0ED-37EE5B17D1EF"
+    }
+
+#### Response:
+
+  {
+      "idSign":"20210527121455",
+      "keygen":"Su codigo de verificacion temporal es : 78460827"
+  }
+
+### Sign Contract [EN CONSTRUCCION ⚠️]
+
+#### Service:
+
+    /account/sign/contract
+    
+#### Request:
+
+    {
+        "idDevice": "D5C5F59A-6183-4F22-B9F1-D26C0A46276E",
+        "sendTo": "3325418120",
+        "idCompany": "4AD8A2A7-57A4-4731-B0ED-37EE5B17D1EF"
+    }
+
+#### Response:
+
+  {
+      "idSign":"20210527121455",
+      "keygen":"Su codigo de verificacion temporal es : 78460827"
+  }
+
+### Confirm Signature [EN CONSTRUCCION ⚠️]
+
+#### Service:
+
+    /account/sign/confirm
+    
+#### Request:
+
+    { 
+        "idSign": "20210527121620",
+        "idDevice": "D5C5F59A-6183-4F22-B9F1-D26C0A46276E", 
+        "sendTo": "3325418120",
+        "keygen": "14443499"
+    }
+
+#### Response:
+
+    {
+        "signed": "success"
+    }
+
+### Account Detail [EN CONSTRUCCION ⚠️]
+
+#### Service:
+
+    /account/detail
+    
+#### Request:
+
+    {
+        "idAccount": "00302020344",
+        "channel": 6
+    }
+
+
+#### Response:
+
+    {
+        "status": "success",
+        "message": "consult balances",
+        "account": {
+            "idAccount": "00302020344",
+            "description": "ABC Cuenta de Ahorro",
+            "balance": "200246.9",
+            "blockedBalance": "84000",
+            "accountBalance": "284246.9",
+            "clabe": "138580003020203441"
+        }
     }
 
 ### Create Account Sigle - ! DEPRECATED
@@ -291,143 +383,20 @@ Apertura de una cuenta Nivel 2 en ABC Capital, Galileo y envío de Documentació
 |identification|-|alphanumeric|mandatory|-|Credencial del INE|-|✔️|-|
 |proofAddress|-|alphanumeric|mandatory|-|Comprobante de Domicilio|-|✔️|-|
 |selfie|-|alphanumeric|mandatory|-|Prueba de Vida|-|✔️|-|
+|idSign ⚠️|40|alphanumeric|optional|-|Nombre del Beneficiario|Hide|-|-|
+|idDevice ⚠️|10|numeric|optional|3, 10, 40|Tipo de Cuenta de Beneficiario.|Hide|-|-|
+|sendTo ⚠️|40|alphanumeric|mandatory|-|Concepto de pago|Hide|-|-|
+|keygen ⚠️|7|numeric|optional|-|Referencia de Pago|Hide|-|-|
 
 
-## Signing [EN CONSTRUCCION ⚠️]
+## Movements [EN CONSTRUCCION ⚠️]
 ----------
 
 **Description:**
 
-Firma Firma Digital via SMS para contratos de Terminos y Condiciones, Geolocalizacion, Contrato por apertura de cuenta.
+Todo lo relacionado a la informacion de la Consulta de movimientos en la Cuenta.
 
-### Sign Terms & Condition and Geolocation [EN CONSTRUCCION ⚠️]
-
-#### Service:
-
-    /account/sign/privacy
-    
-#### Request:
-
-    {
-        "idDevice": "D5C5F59A-6183-4F22-B9F1-D26C0A46276E",
-        "sendTo": "3325418120",
-        "idCompany": "4AD8A2A7-57A4-4731-B0ED-37EE5B17D1EF"
-    }
-
-#### Response:
-
-  {
-      "idSign":"20210527121455",
-      "keygen":"Su codigo de verificacion temporal es : 78460827"
-  }
-
-### Sign Contract [EN CONSTRUCCION ⚠️]
-
-#### Service:
-
-    /account/sign/contract
-    
-#### Request:
-
-    {
-        "idDevice": "D5C5F59A-6183-4F22-B9F1-D26C0A46276E",
-        "sendTo": "3325418120",
-        "idCompany": "4AD8A2A7-57A4-4731-B0ED-37EE5B17D1EF"
-    }
-
-#### Response:
-
-  {
-      "idSign":"20210527121455",
-      "keygen":"Su codigo de verificacion temporal es : 78460827"
-  }
-
-### Confirm Signature [EN CONSTRUCCION ⚠️]
-
-#### Service:
-
-    /account/sign/confirm
-    
-#### Request:
-
-    { 
-        "idSign": "20210527121620",
-        "idDevice": "D5C5F59A-6183-4F22-B9F1-D26C0A46276E", 
-        "sendTo": "3325418120",
-        "keygen": "14443499"
-    }
-
-#### Response:
-
-    {
-        "signed": "success"
-    }
-
-### Exceptions and Errors
-
-#### Response
-
-    {
-        "status":"exception",
-        "code":01,
-        "message":"firma incorrecta",
-    }
-
-**Exceptions Code Http**
-    
-|CODE|MESSAGE|
-|-----------|-----------|
-|400|Data no encontrada|
-|404|Registro no satisfactorio|
-
-### Definicion de parametros
-
-|FIELD|SIZE|TYPE|REQUIRED|VALUES|DEFINITION|
-|-----------|-----------|-----------|-----------|-----------|-----------|
-|idSign|40|alphanumeric|optional|-|Nombre del Beneficiario|
-|idDevice|10|numeric|optional|3, 10, 40|Tipo de Cuenta de Beneficiario.|
-|sendTo|40|alphanumeric|mandatory|-|Concepto de pago|
-|keygen|7|numeric|optional|-|Referencia de Pago|
-
-
-## Account [EN CONSTRUCCION ⚠️]
-----------
-
-**Description:**
-
-Todo lo relacionado a la informacion de la Cuenta Bancaria y Consulta de movimientos.
-
-### Account Detail [EN CONSTRUCCION ⚠️]
-
-#### Service:
-
-    /account/detail
-    
-#### Request:
-
-    {
-        "idAccount": "00302020344",
-        "channel": 6
-    }
-
-
-#### Response:
-
-    {
-        "status": "success",
-        "message": "consult balances",
-        "account": {
-            "idAccount": "00302020344",
-            "description": "ABC Cuenta de Ahorro",
-            "balance": "200246.9",
-            "blockedBalance": "84000",
-            "accountBalance": "284246.9",
-            "clabe": "138580003020203441"
-        }
-    }
-
-
-### Account Movements Pending [EN CONSTRUCCION ⚠️]
+### Movements Pending [EN CONSTRUCCION ⚠️]
 
 #### Service:
 
@@ -453,7 +422,7 @@ Todo lo relacionado a la informacion de la Cuenta Bancaria y Consulta de movimie
         }
     }
 
-### Account Movements List [EN CONSTRUCCION ⚠️]
+### Movements List [EN CONSTRUCCION ⚠️]
 
 #### Service:
 
