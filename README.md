@@ -439,23 +439,23 @@ Todo lo relacionado a la informacion de la Consulta de movimientos en la Cuenta.
 
 #### Response:
 
-{
-    "status": "success",
-    "message": "account status",
-    "movements": [
-        {
-            "idTransaction": "20210301",
-            "description": "TRANSFERENCIA SPEI RECIBIDO SANTANDER RASTREO: 2021030140014BMOV0000466445930 CONCEPTO: AHORRO REFERENCIA: 210301",
-            "reference": "FT16092001367217",
-            "post": "20210301",
-            "description": "TRASFERENCIA SPEI RECIBIDO |CUENTA ORIGEN: 014180605669601973| BANCO: SANTANDER| ORDENANTE: SANDRA FIGUEROA ESQUIVEL| CLAVE DE RASTREO: 2021030140014BMOV0000466445930| REFERENCIA: 210301| CONCEPTO: AHORRO|",
-            "narrative": "2103011257",
-            "pamDebitCard": "0.00",
-            "pamCreditCard": "5000.00",
-            "runningBalance": "74253.88"
-        }
-    ]
-}
+    {
+        "status": "success",
+        "message": "account status",
+        "movements": [
+            {
+                "idTransaction": "20210301",
+                "description": "TRANSFERENCIA SPEI RECIBIDO SANTANDER RASTREO: 2021030140014BMOV0000466445930 CONCEPTO: AHORRO REFERENCIA: 210301",
+                "reference": "FT16092001367217",
+                "post": "20210301",
+                "description": "TRASFERENCIA SPEI RECIBIDO |CUENTA ORIGEN: 014180605669601973| BANCO: SANTANDER| ORDENANTE: SANDRA FIGUEROA ESQUIVEL| CLAVE DE RASTREO: 2021030140014BMOV0000466445930| REFERENCIA: 210301| CONCEPTO: AHORRO|",
+                "narrative": "2103011257",
+                "pamDebitCard": "0.00",
+                "pamCreditCard": "5000.00",
+                "runningBalance": "74253.88"
+            }
+        ]
+    }
 
 ### Exceptions and Errors
 
