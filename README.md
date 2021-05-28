@@ -172,10 +172,10 @@ Apertura de una cuenta Nivel 2 en ABC Capital, Galileo y envío de Documentació
 
 #### Response:
 
-  {
-      "idSign":"20210527121455",
-      "keygen":"Su codigo de verificacion temporal es : 78460827"
-  }
+    {
+        "idSign":"20210527121455",
+        "keygen":"Su codigo de verificacion temporal es : 78460827"
+    }
 
 ### Sign Contract [EN CONSTRUCCION ⚠️]
 
@@ -193,10 +193,10 @@ Apertura de una cuenta Nivel 2 en ABC Capital, Galileo y envío de Documentació
 
 #### Response:
 
-  {
-      "idSign":"20210527121455",
-      "keygen":"Su codigo de verificacion temporal es : 78460827"
-  }
+    {
+        "idSign":"20210527121455",
+        "keygen":"Su codigo de verificacion temporal es : 78460827"
+    }
 
 ### Confirm Signature [EN CONSTRUCCION ⚠️]
 
