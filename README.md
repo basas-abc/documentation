@@ -292,6 +292,219 @@ Apertura de una cuenta Nivel 2 en ABC Capital, Galileo y envío de Documentació
 |proofAddress|-|alphanumeric|mandatory|-|Comprobante de Domicilio|-|✔️|-|
 |selfie|-|alphanumeric|mandatory|-|Prueba de Vida|-|✔️|-|
 
+
+## Signing [EN CONSTRUCCION ⚠️]
+----------
+
+**Description:**
+
+Firma Firma Digital via SMS para contratos de Terminos y Condiciones, Geolocalizacion, Contrato por apertura de cuenta.
+
+### Sign Terms & Condition and Geolocation [EN CONSTRUCCION ⚠️]
+
+#### Service:
+
+    /account/sign/privacy
+    
+#### Request:
+
+    {
+        "idDevice": "D5C5F59A-6183-4F22-B9F1-D26C0A46276E",
+        "sendTo": "3325418120",
+        "idCompany": "4AD8A2A7-57A4-4731-B0ED-37EE5B17D1EF"
+    }
+
+#### Response:
+
+  {
+      "idSign":"20210527121455",
+      "keygen":"Su codigo de verificacion temporal es : 78460827"
+  }
+
+### Sign Contract [EN CONSTRUCCION ⚠️]
+
+#### Service:
+
+    /account/sign/contract
+    
+#### Request:
+
+    {
+        "idDevice": "D5C5F59A-6183-4F22-B9F1-D26C0A46276E",
+        "sendTo": "3325418120",
+        "idCompany": "4AD8A2A7-57A4-4731-B0ED-37EE5B17D1EF"
+    }
+
+#### Response:
+
+  {
+      "idSign":"20210527121455",
+      "keygen":"Su codigo de verificacion temporal es : 78460827"
+  }
+
+### Confirm Signature [EN CONSTRUCCION ⚠️]
+
+#### Service:
+
+    /account/sign/confirm
+    
+#### Request:
+
+    { 
+        "idSign": "20210527121620",
+        "idDevice": "D5C5F59A-6183-4F22-B9F1-D26C0A46276E", 
+        "sendTo": "3325418120",
+        "keygen": "14443499"
+    }
+
+#### Response:
+
+    {
+        "signed": "success"
+    }
+
+### Exceptions and Errors
+
+#### Response
+
+    {
+        "status":"exception",
+        "code":01,
+        "message":"firma incorrecta",
+    }
+
+**Exceptions Code Http**
+    
+|CODE|MESSAGE|
+|-----------|-----------|
+|400|Data no encontrada|
+|404|Registro no satisfactorio|
+
+### Definicion de parametros
+
+|FIELD|SIZE|TYPE|REQUIRED|VALUES|DEFINITION|
+|-----------|-----------|-----------|-----------|-----------|-----------|
+|idSign|40|alphanumeric|optional|-|Nombre del Beneficiario|
+|idDevice|10|numeric|optional|3, 10, 40|Tipo de Cuenta de Beneficiario.|
+|sendTo|40|alphanumeric|mandatory|-|Concepto de pago|
+|keygen|7|numeric|optional|-|Referencia de Pago|
+
+
+## Account [EN CONSTRUCCION ⚠️]
+----------
+
+**Description:**
+
+Todo lo relacionado a la informacion de la Cuenta Bancaria y Consulta de movimientos.
+
+### Account Detail [EN CONSTRUCCION ⚠️]
+
+#### Service:
+
+    /account/detail
+    
+#### Request:
+
+    {
+        "idAccount": "00302020344",
+        "channel": 6
+    }
+
+
+#### Response:
+
+    {
+        "status": "success",
+        "message": "consult balances",
+        "account": {
+            "idAccount": "00302020344",
+            "description": "ABC Cuenta de Ahorro",
+            "balance": "200246.9",
+            "blockedBalance": "84000",
+            "accountBalance": "284246.9",
+            "clabe": "138580003020203441"
+        }
+    }
+
+
+### Account Movements Pending [EN CONSTRUCCION ⚠️]
+
+#### Service:
+
+    /account/movements/pending
+    
+#### Request:
+
+    {
+        "idAccount": "00302020344",
+        "channel": 6
+    }
+
+#### Response:
+
+    {
+        "status": "success",
+        "message": "pending movements",
+        "movements": {
+            "originAccount": "00302020344",
+            "reference": "ACLK2113300001",
+            "dateBlocked": "13/05/2021",
+            "amountBlocked": "84000.00"
+        }
+    }
+
+### Account Movements List [EN CONSTRUCCION ⚠️]
+
+#### Service:
+
+    /account/movements/list
+    
+#### Request:
+
+    {
+        "idAccount": "00302020344",
+        "channel": 6,
+        "iniDate": "2021/03/01",
+        "endDate": "2021/03/30"
+    }
+
+#### Response:
+
+{
+    "status": "success",
+    "message": "account status",
+    "movements": [
+        {
+            "idTransaction": "20210301",
+            "description": "TRANSFERENCIA SPEI RECIBIDO SANTANDER RASTREO: 2021030140014BMOV0000466445930 CONCEPTO: AHORRO REFERENCIA: 210301",
+            "reference": "FT16092001367217",
+            "post": "20210301",
+            "description": "TRASFERENCIA SPEI RECIBIDO |CUENTA ORIGEN: 014180605669601973| BANCO: SANTANDER| ORDENANTE: SANDRA FIGUEROA ESQUIVEL| CLAVE DE RASTREO: 2021030140014BMOV0000466445930| REFERENCIA: 210301| CONCEPTO: AHORRO|",
+            "narrative": "2103011257",
+            "pamDebitCard": "0.00",
+            "pamCreditCard": "5000.00",
+            "runningBalance": "74253.88"
+        }
+    ]
+}
+
+### Exceptions and Errors
+
+#### Response
+
+    {
+        "status":"exception",
+        "code":01,
+        "message":"firma incorrecta",
+    }
+
+**Exceptions Code Http**
+    
+|CODE|MESSAGE|
+|-----------|-----------|
+|400|Data no encontrada|
+|404|Registro no satisfactorio|
+
 ## Transfers
 ----------
 
