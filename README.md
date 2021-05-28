@@ -383,10 +383,10 @@ Apertura de una cuenta Nivel 2 en ABC Capital, Galileo y envío de Documentació
 |identification|-|alphanumeric|mandatory|-|Credencial del INE|-|✔️|-|
 |proofAddress|-|alphanumeric|mandatory|-|Comprobante de Domicilio|-|✔️|-|
 |selfie|-|alphanumeric|mandatory|-|Prueba de Vida|-|✔️|-|
-|idSign ⚠️|40|alphanumeric|optional|-|Nombre del Beneficiario|Hide|-|-|
-|idDevice ⚠️|10|numeric|optional|3, 10, 40|Tipo de Cuenta de Beneficiario.|Hide|-|-|
-|sendTo ⚠️|40|alphanumeric|mandatory|-|Concepto de pago|Hide|-|-|
-|keygen ⚠️|7|numeric|optional|-|Referencia de Pago|Hide|-|-|
+|idSign ⚠️|-|-|-|-|-|Hide|-|-|
+|idDevice ⚠️|-|-|-|-|-|Hide|-|-|
+|sendTo ⚠️|-|-|-|-|-|Hide|-|-|
+|keygen ⚠️|-|-|-|-|-|Hide|-|-|
 
 
 ## Movements [EN CONSTRUCCION ⚠️]
