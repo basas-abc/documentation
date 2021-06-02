@@ -966,7 +966,6 @@ Todo lo relacionado a catalogos e informacion establecida por el ABC.
 |FIELD|SIZE|TYPE|REQUIRED|VALUES|DEFINITION|
 |-----------|-----------|-----------|-----------|-----------|-----------|
 |postalCode|5|numeric|mandatory|54760|Código Postale|
-|name|60|alphanumeric|mandatory|Bosques de Morelos|Nombre de Colonia|
 
 **Success Code Http** 
 
