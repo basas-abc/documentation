@@ -236,12 +236,12 @@ Apertura de una cuenta Nivel 2 en ABC Capital, Galileo y envío de Documentació
 #### Response:
 
     {
-            "idAccount": "00302020344",
-            "description": "ABC Cuenta de Ahorro",
-            "balance": "200246.9",
-            "blockedBalance": "84000",
-            "accountBalance": "284246.9",
-            "clabe": "138580003020203441"
+        "idAccount": "00302020344",
+        "description": "ABC Cuenta de Ahorro",
+        "balance": "200246.9",
+        "blockedBalance": "84000",
+        "accountBalance": "284246.9",
+        "clabe": "138580003020203441"
     }
 
 ### Create Account Sigle - ! DEPRECATED
@@ -643,7 +643,7 @@ Enlace a cuentas destino para transferencias recurrentes entre cuentas.
        "channel": 00
     }
 
-#### Response Success
+#### Response
 
     {
         "status": "success",
@@ -676,7 +676,7 @@ Enlace a cuentas destino para transferencias recurrentes entre cuentas.
        "channel": 00
     }
 
-#### Response Success
+#### Response
 
     {
         "status": "success",
@@ -705,10 +705,10 @@ Enlace a cuentas destino para transferencias recurrentes entre cuentas.
 
 #### Response Success
 
-        {
-            "status": "success",
-            "message": "unlinked account"
-        }
+    {
+        "status": "success",
+        "message": "unlinked account"
+    }
 
 **Success Code Http** 
 
@@ -899,8 +899,9 @@ Todo lo relacionado a catalogos e informacion establecida por el ABC.
        "bank": "bbva",
     }
 
-#### Response Success
-    {
+#### Response
+
+    [
         {
             "id": "002",
             "name": "bbva",
@@ -911,7 +912,7 @@ Todo lo relacionado a catalogos e informacion establecida por el ABC.
             "name": "banorte",
             "type": "foo",
         },
-    }
+    ]
 
 ### Definition of parameters
 
@@ -935,28 +936,28 @@ Todo lo relacionado a catalogos e informacion establecida por el ABC.
 
     [
         {
-            "idNeighborhood": "15121547603120",
-            "nameNeighborhood": "BOSQUES DE MORELOS"
+            "id": "15121547603120",
+            "name": "BOSQUES DE MORELOS"
         },
         {
-            "idNeighborhood": "15121547603126",
-            "nameNeighborhood": "LAGO DE GUADALUPE"
+            "id": "15121547603126",
+            "name": "LAGO DE GUADALUPE"
         },
         {
-            "idNeighborhood": "15121547603129",
-            "nameNeighborhood": "PLAN DE GUADALUPE"
+            "id": "15121547603129",
+            "name": "PLAN DE GUADALUPE"
         },
         {
-            "idNeighborhood": "15121547603134",
-            "nameNeighborhood": "TRES DE MAYO"
+            "id": "15121547603134",
+            "name": "TRES DE MAYO"
         },
         {
-            "idNeighborhood": "15121547607949",
-            "nameNeighborhood": "HALCON ORIENTE"
+            "id": "15121547607949",
+            "name": "HALCON ORIENTE"
         },
         {
-            "idNeighborhood": "15121547608484",
-            "nameNeighborhood": "RINCON DEL BOSQUE"
+            "id": "15121547608484",
+            "name": "RINCON DEL BOSQUE"
         }
     ]
 
