@@ -928,17 +928,37 @@ Todo lo relacionado a catalogos e informacion establecida por el ABC.
 #### Request
 
     {
-      "postalCode": "54760",
-      "name": "Bosques de morelos"
+        "postalCode": 54760
     }
+
 #### Response Success
-    {
-        "idNeighborhood": "15121547603120",
-        "idState": "15",
-        "idCity": "1504",
-        "idMunicipality": "15121",
-        "idCountry": "MX"
-    }
+
+    [
+        {
+            "idNeighborhood": "15121547603120",
+            "nameNeighborhood": "BOSQUES DE MORELOS"
+        },
+        {
+            "idNeighborhood": "15121547603126",
+            "nameNeighborhood": "LAGO DE GUADALUPE"
+        },
+        {
+            "idNeighborhood": "15121547603129",
+            "nameNeighborhood": "PLAN DE GUADALUPE"
+        },
+        {
+            "idNeighborhood": "15121547603134",
+            "nameNeighborhood": "TRES DE MAYO"
+        },
+        {
+            "idNeighborhood": "15121547607949",
+            "nameNeighborhood": "HALCON ORIENTE"
+        },
+        {
+            "idNeighborhood": "15121547608484",
+            "nameNeighborhood": "RINCON DEL BOSQUE"
+        }
+    ]
 
 ### Definition of parameters
 
