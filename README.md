@@ -87,7 +87,7 @@ Apertura de una cuenta Nivel 2 en ABC Capital, Galileo y envío de Documentació
         "numberId": "2898403",
         "dateExpeditionNumberId": 20130120,
         "dateExpirationNumberId": 20211230,
-        "channel": 6,
+        "channel": 00,
         "rfc": null,
         "idSign": "20210510160506"
     }
@@ -95,9 +95,9 @@ Apertura de una cuenta Nivel 2 en ABC Capital, Galileo y envío de Documentació
 #### Response:
 
     {
-       "status":"success",
-       "idClient":"1000087634",
-       "code":"00"
+       "status": "success",
+       "idClient": "1000087634",
+       "code": "00"
     }
 
 ### KYC
@@ -123,7 +123,7 @@ Apertura de una cuenta Nivel 2 en ABC Capital, Galileo y envío de Documentació
 #### Response:
 
     {
-       "status":"success"
+       "status": "success"
     }
 
 ### Create Account
@@ -141,7 +141,7 @@ Apertura de una cuenta Nivel 2 en ABC Capital, Galileo y envío de Documentació
         "firstName": "",
         "telephone": 3325418120,
         "geolocation": "10°','-60",
-        "channel": 0,
+        "channel": 00,
         "idSign": "20210415150355"
     }
 
@@ -151,9 +151,9 @@ Apertura de una cuenta Nivel 2 en ABC Capital, Galileo y envío de Documentació
         "status": "success",
         "idClient": 1000000000,
         "idAccount": 00204593126,
-        "CLABE": 002010077777777779,
+        "clabe": 002010077777777779,
         "prn": 14027000005,
-        "code":"00"
+        "code": "00"
     }
 
 ### Sign Terms & Condition and Geolocation [EN CONSTRUCCION ⚠️]
@@ -173,8 +173,8 @@ Apertura de una cuenta Nivel 2 en ABC Capital, Galileo y envío de Documentació
 #### Response:
 
     {
-        "idSign":"20210527121455",
-        "keygen":"Su codigo de verificacion temporal es : 78460827"
+        "idSign": "20210527121455",
+        "keygen": "Su codigo de verificacion temporal es : 78460827"
     }
 
 ### Sign Contract [EN CONSTRUCCION ⚠️]
@@ -194,8 +194,8 @@ Apertura de una cuenta Nivel 2 en ABC Capital, Galileo y envío de Documentació
 #### Response:
 
     {
-        "idSign":"20210527121455",
-        "keygen":"Su codigo de verificacion temporal es : 78460827"
+        "idSign": "20210527121455",
+        "keygen": "Su codigo de verificacion temporal es : 78460827"
     }
 
 ### Confirm Signature [EN CONSTRUCCION ⚠️]
@@ -229,23 +229,19 @@ Apertura de una cuenta Nivel 2 en ABC Capital, Galileo y envío de Documentació
 
     {
         "idAccount": "00302020344",
-        "channel": 6
+        "channel": 00
     }
 
 
 #### Response:
 
     {
-        "status": "success",
-        "message": "consult balances",
-        "account": {
             "idAccount": "00302020344",
             "description": "ABC Cuenta de Ahorro",
             "balance": "200246.9",
             "blockedBalance": "84000",
             "accountBalance": "284246.9",
             "clabe": "138580003020203441"
-        }
     }
 
 ### Create Account Sigle - ! DEPRECATED
@@ -275,9 +271,9 @@ Apertura de una cuenta Nivel 2 en ABC Capital, Galileo y envío de Documentació
             "numberId": "2898403",
             "dateExpeditionNumberId": 20130120,
             "dateExpirationNumberId": 20210405,
-            "channel": 6,
+            "channel": 00,
             "rfc": null,
-            "geolocation":"44.244167,7.769444",
+            "geolocation": "44.244167,7.769444",
         },
         "documents": {
             "idFront": "data:image/png;base64",
@@ -294,7 +290,7 @@ Apertura de una cuenta Nivel 2 en ABC Capital, Galileo y envío de Documentació
         "message": "Registro de Usuario",
         "idClient": 1000100581,
         "idAccount": "00000564671",
-        "CLABE": "138580000005646712",
+        "clabe": "138580000005646712",
         "prn": "999900448690"
     }
 
@@ -317,9 +313,9 @@ Apertura de una cuenta Nivel 2 en ABC Capital, Galileo y envío de Documentació
 #### Response
 
     {
-        "status":"exception",
+        "status": "exception",
         "code":01,
-        "message":"firma incorrecta",
+        "message": "firma incorrecta",
     }
 
 **Exceptions Code Http**
@@ -406,20 +402,16 @@ Todo lo relacionado a la informacion de la Consulta de movimientos en la Cuenta.
 
     {
         "idAccount": "00302020344",
-        "channel": 6
+        "channel": 00
     }
 
 #### Response:
 
     {
-        "status": "success",
-        "message": "pending movements",
-        "movements": {
-            "originAccount": "00302020344",
-            "reference": "ACLK2113300001",
-            "dateBlocked": "13/05/2021",
-            "amountBlocked": "84000.00"
-        }
+        "originAccount": "00302020344",
+        "reference": "ACLK2113300001",
+        "dateBlocked": "13/05/2021",
+        "amountBlocked": "84000.00"
     }
 
 ### Movements List [EN CONSTRUCCION ⚠️]
@@ -432,39 +424,35 @@ Todo lo relacionado a la informacion de la Consulta de movimientos en la Cuenta.
 
     {
         "idAccount": "00302020344",
-        "channel": 6,
+        "channel": 00,
         "iniDate": "2021/03/01",
         "endDate": "2021/03/30"
     }
 
 #### Response:
 
-    {
-        "status": "success",
-        "message": "account status",
-        "movements": [
-            {
-                "idTransaction": "20210301",
-                "shortDescription": "TRANSFERENCIA SPEI RECIBIDO SANTANDER RASTREO: 2021030140014BMOV0000466445930 CONCEPTO: AHORRO REFERENCIA: 210301",
-                "reference": "FT16092001367217",
-                "post": "20210301",
-                "fullDescription": "TRASFERENCIA SPEI RECIBIDO |CUENTA ORIGEN: 014180605669601973| BANCO: SANTANDER| ORDENANTE: SANDRA FIGUEROA ESQUIVEL| CLAVE DE RASTREO: 2021030140014BMOV0000466445930| REFERENCIA: 210301| CONCEPTO: AHORRO|",
-                "narrative": "2103011257",
-                "pamDebitCard": "0.00",
-                "pamCreditCard": "5000.00",
-                "runningBalance": "74253.88"
-            }
-        ]
-    }
+    [
+        {
+            "idTransaction": "20210301",
+            "shortDescription": "TRANSFERENCIA SPEI RECIBIDO SANTANDER RASTREO: 2021030140014BMOV0000466445930 CONCEPTO: AHORRO REFERENCIA: 210301",
+            "reference": "FT16092001367217",
+            "post": "20210301",
+            "fullDescription": "TRASFERENCIA SPEI RECIBIDO |CUENTA ORIGEN: 014180605669601973| BANCO: SANTANDER| ORDENANTE: SANDRA FIGUEROA ESQUIVEL| CLAVE DE RASTREO: 2021030140014BMOV0000466445930| REFERENCIA: 210301| CONCEPTO: AHORRO|",
+            "narrative": "2103011257",
+            "pamDebitCard": "0.00",
+            "pamCreditCard": "5000.00",
+            "runningBalance": "74253.88"
+        }
+    ]
 
 ### Exceptions and Errors
 
 #### Response
 
     {
-        "status":"exception",
+        "status": "exception",
         "code":01,
-        "message":"firma incorrecta",
+        "message": "firma incorrecta",
     }
 
 **Exceptions Code Http**
@@ -503,38 +491,38 @@ Lanzar transacciones via SPEI (Sistema de Pagos Electrónicos Interbancarios).
 #### SPEI EXPRESS Request:
 
     {
-       "origin":"1323123312312",
-       "destination":"789789789789",
-       "amount":"MXN300.00",
-       "idBank":"000",
-       "typeAccount":"debit",
-       "beneficiaryName":"Juanito Perez Perez",
-       "concept":"Concepto de Pago",
-       "reference":"1234567",
-       "channel": 00,
-       "geolocation":"44.244167,7.769444",
-       "signing":"Important! - See the documentation Encryption signature."
+        "origin": "1323123312312",
+        "destination": "789789789789",
+        "amount": "MXN300.00",
+        "idBank": "000",
+        "typeAccount": "debit",
+        "beneficiaryName": "Juanito Perez Perez",
+        "concept": "Concepto de Pago",
+        "reference": "1234567",
+        "channel": 00,
+        "geolocation": "44.244167,7.769444",
+        "signing": "Important! - See the documentation Encryption signature."
     }
     
 #### SPEI SIMPLE Request:
 
     {
-       "origin":"1323123312312",
-       "destination":"789789789789",
-       "amount":"MXN300.00",
-       "concept":"Concepto de Pago",
-       "reference":"1234567",
-       "channel":00,
-       "geolocation":"44.244167,7.769444",
-       "signing":"Important! - See the documentation Encryption signature."
+       "origin": "1323123312312",
+       "destination": "789789789789",
+       "amount": "MXN300.00",
+       "concept": "Concepto de Pago",
+       "reference": "1234567",
+       "channel": 00,
+       "geolocation": "44.244167,7.769444",
+       "signing": "Important! - See the documentation Encryption signature."
     }
 
 #### SPEI Response
 
     {
-       "status":"success",
-       "message":"successful shipment",
-       "idTransaction":"12345678",
+       "status": "success",
+       "message": "successful shipment",
+       "idTransaction": "12345678",
     }
 
 ### F2F
@@ -550,38 +538,38 @@ Lanzar transferencias entre cuentas Fintech a Fintech.
 #### F2F EXPRESS Request:
 
     {
-       "origin":"1323123312312",
-       "destination":"789789789789",
-       "amount":"MXN300.00",
-       "idBank":"000",
-       "typeAccount":"debit",
-       "beneficiaryName":"Juanito Perez Perez",
-       "concept":"Concepto de Pago",
-       "reference":"1234567",
+       "origin": "1323123312312",
+       "destination": "789789789789",
+       "amount": "MXN300.00",
+       "idBank": "000",
+       "typeAccount": "debit",
+       "beneficiaryName": "Juanito Perez Perez",
+       "concept": "Concepto de Pago",
+       "reference": "1234567",
        "channel": 00,
-       "geolocation":"44.244167,7.769444",
-       "signing":"Important! - See the documentation Encryption signature."
+       "geolocation": "44.244167,7.769444",
+       "signing": "Important! - See the documentation Encryption signature."
     }
     
 #### F2F SIMPLE Request:
 
     {
-       "origin":"1323123312312",
-       "destination":"789789789789",
-       "amount":"MXN300.00",
-       "concept":"Concepto de Pago",
-       "reference":"1234567",
-       "channel":00,
-       "geolocation":"44.244167,7.769444",
-       "signing":"Important! - See the documentation Encryption signature."
+       "origin": "1323123312312",
+       "destination": "789789789789",
+       "amount": "MXN300.00",
+       "concept": "Concepto de Pago",
+       "reference": "1234567",
+       "channel": 00,
+       "geolocation": "44.244167,7.769444",
+       "signing": "Important! - See the documentation Encryption signature."
     }
 
 #### F2F Response
 
     {
-       "status":"success",
-       "message":"successful shipment",
-       "idTransaction":"12345678",
+       "status": "success",
+       "message": "successful shipment",
+       "idTransaction": "12345678",
     }
 
 **Success Code Http** 
@@ -596,8 +584,8 @@ Lanzar transferencias entre cuentas Fintech a Fintech.
 #### Response
 
     {
-        "status":"exception",
-        "message":"firma incorrecta",
+        "status": "exception",
+        "message": "firma incorrecta",
     }
 
 **Exceptions Code Http**
@@ -619,7 +607,7 @@ Lanzar transferencias entre cuentas Fintech a Fintech.
 |typeAccount|10|numeric|optional|3, 10, 40|Tipo de Cuenta de Beneficiario.|
 |concept|40|alphanumeric|mandatory|-|Concepto de pago|
 |reference|7|numeric|optional|-|Referencia de Pago|
-|channel|3|numeric|mandatory|000|Número Asignado por ABC|
+|channel|2|numeric|mandatory|00|Número Asignado por ABC|
 |geolocation|40|alphanumeric|mandatory|44.244167,7.769444|Datos del dispositivo al momento de instruir la transacción|
 |signing|300|alphanumeric|mandatory|!!!|Important! - See the documentation Encryption signature.|
 
@@ -647,20 +635,20 @@ Enlace a cuentas destino para transferencias recurrentes entre cuentas.
 #### Request
 
     {
-       "prn":"foo",
-       "account":"12345678",
-       "beneficiary":"Juan Perez Perez",
-       "rfc":"ABCDE123456",
-       "email":"test@abc.com.mx",
-       "channel":001
+       "prn": "foo",
+       "account": "12345678",
+       "beneficiary": "Juan Perez Perez",
+       "rfc": "ABCDE123456",
+       "email": "test@abc.com.mx",
+       "channel": 00
     }
 
 #### Response Success
 
     {
-        "status":"success",
-        "message":"linked account",
-        "idBeneficiary":"12345678"
+        "status": "success",
+        "message": "linked account",
+        "idBeneficiary": "12345678"
     }
 
 **Success Code Http** 
@@ -680,19 +668,19 @@ Enlace a cuentas destino para transferencias recurrentes entre cuentas.
 #### Request
 
     {
-       "prn":"foo",
-       "account":"12345678",
-       "beneficiary":"Juan Perez Perez",
-       "rfc":"ABCDE123456",
-       "email":"test@abc.com.mx",
-       "channel":00
+       "prn": "foo",
+       "account": "12345678",
+       "beneficiary": "Juan Perez Perez",
+       "rfc": "ABCDE123456",
+       "email": "test@abc.com.mx",
+       "channel": 00
     }
 
 #### Response Success
 
     {
-        "status":"success",
-        "message":"modified account",
+        "status": "success",
+        "message": "modified account",
     }
 
 **Success Code Http** 
@@ -712,14 +700,14 @@ Enlace a cuentas destino para transferencias recurrentes entre cuentas.
 #### Request
 
     {
-       "channel":00,
+       "channel": 00
     }
 
 #### Response Success
 
         {
-            "status":"success",
-            "message":"unlinked account"
+            "status": "success",
+            "message": "unlinked account"
         }
 
 **Success Code Http** 
@@ -734,9 +722,9 @@ Enlace a cuentas destino para transferencias recurrentes entre cuentas.
 #### Response
 
     {
-        "status":"error",
+        "status": "error",
         "code":1,
-        "message":"firma incorrecta",
+        "message": "firma incorrecta",
     }
 
 **Exceptions Code Http**
@@ -769,7 +757,7 @@ Enlace a cuentas destino para transferencias recurrentes entre cuentas.
 |beneficiary|40|alphanumeric|mandatory|-|Nombre del Beneficiario|
 |rfc|13|alphanumeric|optional|-|RFC con homoclave del beneficiario|
 |email|70|alphanumeric|optional|-|Email de beneficiario|
-|channel|3|numeric|mandatory|000|Número Asignado por ABC|
+|channel|2|numeric|mandatory|00|Número Asignado por ABC|
 
 
 ## Banking Services
@@ -784,11 +772,6 @@ Todos los Servicios bancarios disponibles como Tiempo Aire, Pagos Referenciados,
 #### Service:
 
     /services/topups
-
-#### Request:
-
-    {
-    }
 
 #### Response:
 
@@ -912,21 +895,21 @@ Todo lo relacionado a catalogos e informacion establecida por el ABC.
 #### Request
 
     {
-       "id":"002",
-       "bank":"bbva",
+       "id": "002",
+       "bank": "bbva",
     }
 
 #### Response Success
     {
         {
-            "id":"002",
-            "name":"bbva",
-            "type":"foo",
+            "id": "002",
+            "name": "bbva",
+            "type": "foo",
         },
         {
-            "id":"003",
-            "name":"banorte",
-            "type":"foo",
+            "id": "003",
+            "name": "banorte",
+            "type": "foo",
         },
     }
 
