@@ -488,8 +488,6 @@ Lanzar transacciones via SPEI (Sistema de Pagos Electrónicos Interbancarios).
 
     /transfers/spei
 
-    /transaction/spei - ! DEPRECATED
-
 #### SPEI EXPRESS Request:
 
     {
@@ -761,7 +759,7 @@ Enlace a cuentas destino para transferencias recurrentes entre cuentas.
 |email|70|alphanumeric|optional|-|Email de beneficiario|
 |channel|2|numeric|mandatory|00|Número Asignado por ABC|
 
-* La CLABE bancaria deberá de tener máximo 18 dígitos, el teléfono debe de concatenar el id del banco a dos dígitos más el numero telefónico a diez dígitos, por numero de tarjeta esta tiene que ser máximo 16 dígitos.
+(*) La CLABE bancaria deberá de tener máximo 18 dígitos, el teléfono debe de concatenar el id del banco a dos dígitos más el numero telefónico a diez dígitos, por numero de tarjeta esta tiene que ser máximo 16 dígitos.
 
 
 ## Banking Services
