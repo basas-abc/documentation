@@ -100,6 +100,31 @@ Apertura de una cuenta Nivel 2 en ABC Capital, Galileo y envío de Documentació
        "code": "00"
     }
 
+### Definicion de campos
+
+|FIELD|SIZE|TYPE|REQUIRED|VALUES|DEFINITION|SOURCE FORM|SOURCE OCR|SOURCE DEVICE|
+|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
+|paternalName|35|alphanumeric|mandatory|-|Apellido Paterno|✔️|-|-|
+|maternalName|35|alphanumeric|mandatory|-|Apellido Materno|✔️|-|-|
+|firstName|35|alphanumeric|mandatory|-|Nombres|✔️|-|-|
+|birthDate|8|numeric|mandatory|AAAAMMDD|Fecha de Nacimiento|✔️|-|-|
+|birthPlace|2|alphanumeric|mandatory|-|Lugar de Nacimiento|✔️|-|-|
+|gender|1|alphanumeric|mandatory|F, M|Genero|✔️|-|-|
+|curp|18|alphanumeric|mandatory|-|CURP|✔️|-|-|
+|telephone|10|numeric|mandatory|-|Número de Celular|✔️|-|-|
+|email|50|alphanumeric|mandatory|-|Correo electrónico|✔️|-|-|
+|streetAddress|35|alphanumeric|mandatory|-|Calle|✔️|-|-|
+|premise|35|alphanumeric|mandatory|-|No. Exterior|✔️|-|-|
+|subPremise|35|alphanumeric|optional|-|No. Interior|✔️|-|-|
+|postalCode|5|alphanumeric|mandatory|-|Código Postal|✔️|-|-|
+|neighborhood|15|alphanumeric|mandatory|15121547603120|Id de la Colonia, Se obtiene del Servicio de /catalog/neighborhood|✔️|-|-|
+|numberId|20|alphanumeric|mandatory|-|Número de Identificación|-|✔️|-|
+|dateExpeditionNumberId|8|numeric|mandatory|AAAAMMDD|Fecha de Expedición de la Identificación|-|✔️|-|
+|dateExpirationNumberId|8|numeric|mandatory|AAAAMMDD|Fecha de Vencimiento de la Identificación|-|✔️|-|
+|channel|2|numeric|mandatory|00|Número Asignado por ABC|Hide|-|-|
+|rfc|13|alphanumeric|optional|-|RFC|-|✔️|-|
+|idSign|14|numeric|mandatory|-|Codigo para confirmacion de firma|Hide|-|-|
+
 ### KYC
 
 #### Service:
@@ -125,6 +150,19 @@ Apertura de una cuenta Nivel 2 en ABC Capital, Galileo y envío de Documentació
     {
        "status": "success"
     }
+
+### Definicion de campos
+
+|FIELD|SIZE|TYPE|REQUIRED|VALUES|DEFINITION|SOURCE FORM|SOURCE OCR|SOURCE DEVICE|
+|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
+|idClient|15|alphanumeric|optional|-|Identificador de Cliente|Hide|-|-|
+|paternalName|35|alphanumeric|mandatory|-|Apellido Paterno|✔️|-|-|
+|maternalName|35|alphanumeric|mandatory|-|Apellido Materno|✔️|-|-|
+|firstName|35|alphanumeric|mandatory|-|Nombres|✔️|-|-|
+|curp|18|alphanumeric|mandatory|-|CURP|✔️|-|-|
+|identification|-|alphanumeric|mandatory|-|Credencial del INE|-|✔️|-|
+|proofAddress|-|alphanumeric|mandatory|-|Comprobante de Domicilio|-|✔️|-|
+|selfie|-|alphanumeric|mandatory|-|Prueba de Vida|-|✔️|-|
 
 ### Create Account
 
@@ -156,7 +194,20 @@ Apertura de una cuenta Nivel 2 en ABC Capital, Galileo y envío de Documentació
         "code": "00"
     }
 
-### Sign Terms & Condition and Geolocation [EN CONSTRUCCION ⚠️]
+### Definicion de campos
+
+|FIELD|SIZE|TYPE|REQUIRED|VALUES|DEFINITION|SOURCE FORM|SOURCE OCR|SOURCE DEVICE|
+|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
+|idClient|15|alphanumeric|optional|-|Identificador de Cliente|Hide|-|-|
+|paternalName|35|alphanumeric|mandatory|-|Apellido Paterno|✔️|-|-|
+|maternalName|35|alphanumeric|mandatory|-|Apellido Materno|✔️|-|-|
+|firstName|35|alphanumeric|mandatory|-|Nombres|✔️|-|-|
+|telephone|10|numeric|mandatory|-|Número de Celular|✔️|-|-|
+|geolocation|40|alphanumeric|mandatory|44.244167,7.769444|Datos del dispositivo al momento de instruir la transacción|-|-|✔️|
+|channel|2|numeric|mandatory|00|Número Asignado por ABC|Hide|-|-|
+|idSign|14|numeric|mandatory|-|Codigo para confirmacion de firma|Hide|-|-|
+
+### Sign Terms & Condition and Geolocation
 
 #### Service:
 
@@ -177,7 +228,15 @@ Apertura de una cuenta Nivel 2 en ABC Capital, Galileo y envío de Documentació
         "keygen": "Su codigo de verificacion temporal es : 78460827"
     }
 
-### Sign Contract [EN CONSTRUCCION ⚠️]
+### Definicion de campos
+
+|FIELD|SIZE|TYPE|REQUIRED|VALUES|DEFINITION|SOURCE FORM|SOURCE OCR|SOURCE DEVICE|
+|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
+|idDevice|-|alphanumeric|mandatory|-|-|Hide|-|-|
+|sendTo|10|numeric|mandatory|3325418120|Numero telefónico del cuentahabiente|✔️|-|-|
+|idCompany|-|alphanumeric|mandatory|-|-|Hide|-|-|
+
+### Sign Contract
 
 #### Service:
 
@@ -198,7 +257,15 @@ Apertura de una cuenta Nivel 2 en ABC Capital, Galileo y envío de Documentació
         "keygen": "Su codigo de verificacion temporal es : 78460827"
     }
 
-### Confirm Signature [EN CONSTRUCCION ⚠️]
+### Definicion de campos
+
+|FIELD|SIZE|TYPE|REQUIRED|VALUES|DEFINITION|SOURCE FORM|SOURCE OCR|SOURCE DEVICE|
+|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
+|idDevice|-|alphanumeric|mandatory|-|-|Hide|-|-|
+|sendTo|10|numeric|mandatory|3325418120|Numero telefónico del cuentahabiente|✔️|-|-|
+|idCompany|-|alphanumeric|mandatory|-|-|Hide|-|-|
+
+### Confirm Signature
 
 #### Service:
 
@@ -219,7 +286,16 @@ Apertura de una cuenta Nivel 2 en ABC Capital, Galileo y envío de Documentació
         "signed": "success"
     }
 
-### Account Detail [EN CONSTRUCCION ⚠️]
+### Definicion de campos
+
+|FIELD|SIZE|TYPE|REQUIRED|VALUES|DEFINITION|SOURCE FORM|SOURCE OCR|SOURCE DEVICE|
+|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
+|idSign|14|numeric|mandatory|20210527121620|Codigo para confirmacion de firma|Hide|-|-|
+|idDevice|-|alphanumeric|mandatory|-|-|Hide|-|-
+|sendTo|10|numeric|mandatory|3325418120|Numero telefónico del cuentahabiente|✔️|-|-|
+|keygen|8|numeric|mandatory|14443499|Código de confirmación de 8 dígitos que llega en un SMS|Hide|-|-|
+
+### Account Detail
 
 #### Service:
 
@@ -232,11 +308,10 @@ Apertura de una cuenta Nivel 2 en ABC Capital, Galileo y envío de Documentació
         "channel": 00
     }
 
-
 #### Response:
 
     {
-        "idAccount": "00302020344",
+        "idAccount": 00302020344,
         "description": "ABC Cuenta de Ahorro",
         "balance": "200246.9",
         "blockedBalance": "84000",
@@ -244,69 +319,12 @@ Apertura de una cuenta Nivel 2 en ABC Capital, Galileo y envío de Documentació
         "clabe": "138580003020203441"
     }
 
-### Create Account Sigle - ! DEPRECATED
+### Definicion de campos
 
-#### Service:
-
-    /account/create
-    
-#### Request:
-
-    {
-        "client": {
-            "paternalName": "[Paternal Name]",
-            "maternalName": "[Maternal Name]",
-            "firstName": "[Name]",
-            "birthDate": 19701103,
-            "birthPlace": "24",
-            "gender": "M",
-            "curp": "[CURP]",
-            "telephone": 5585774007,
-            "email": "test@hotmail.com",
-            "streetAddress": "salaverry",
-            "premise": "1123",
-            "subPremise": "1A",
-            "postalCode": "07310",
-            "neighborhood": "15121547603120",
-            "numberId": "2898403",
-            "dateExpeditionNumberId": 20130120,
-            "dateExpirationNumberId": 20210405,
-            "channel": 00,
-            "rfc": null,
-            "geolocation": "44.244167,7.769444",
-        },
-        "documents": {
-            "idFront": "data:image/png;base64",
-            "idReverse": "data:image/png;base64",
-            "proofAddress": "data:image/png;base64",
-            "selfie": "data:image/png;base64"
-        }
-    }
-
-#### Response:
-
-    {
-        "statusCode": 200,
-        "message": "Registro de Usuario",
-        "idClient": 1000100581,
-        "idAccount": "00000564671",
-        "clabe": "138580000005646712",
-        "prn": "999900448690"
-    }
-
-**Success HTTP list** 
-
-|CODE|MESSAGE|
-|-----------|-----------|
-|200|Registro en proceso|
-
-
-**Success EVENT list** 
-
-|CODE|MESSAGE|
-|-----------|-----------|
-|200|Registro de Usuario|
-
+|FIELD|SIZE|TYPE|REQUIRED|VALUES|DEFINITION|SOURCE FORM|SOURCE OCR|SOURCE DEVICE|
+|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
+|idAccount|11|alphanumeric|mandatory|00302020344|Número Asignado por ABC|Hide|-|-|
+|channel|2|numeric|mandatory|00|Número Asignado por ABC|Hide|-|-|
 
 ### Exceptions and Errors
 
@@ -314,7 +332,7 @@ Apertura de una cuenta Nivel 2 en ABC Capital, Galileo y envío de Documentació
 
     {
         "status": "exception",
-        "code":01,
+        "code": 01,
         "message": "firma incorrecta",
     }
 
@@ -352,47 +370,15 @@ Apertura de una cuenta Nivel 2 en ABC Capital, Galileo y envío de Documentació
 |14|OCURRIO UN PROBLEMA AL ACCEDER AL CORE|
 |15|NO SE REALIZO EL ALTA|
 
-### Definicion de campos
-|FIELD|SIZE|TYPE|REQUIRED|VALUES|DEFINITION|SOURCE FORM|SOURCE OCR|SOURCE DEVICE|
-|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
-|idClient|15|alphanumeric|optional|-|Identificador de Cliente|Hide|-|-|
-|paternalName|35|alphanumeric|mandatory|-|Apellido Paterno|✔️|-|-|
-|maternalName|35|alphanumeric|mandatory|-|Apellido Materno|✔️|-|-|
-|firstName|35|alphanumeric|mandatory|-|Nombres|✔️|-|-|
-|birthDate|8|numeric|mandatory|AAAAMMDD|Fecha de Nacimiento|✔️|-|-|
-|birthPlace|2|alphanumeric|mandatory|-|Lugar de Nacimiento|✔️|-|-|
-|gender|1|alphanumeric|mandatory|F, M|Genero|✔️|-|-|
-|curp|18|alphanumeric|mandatory|-|CURP|✔️|-|-|
-|telephone|10|numeric|mandatory|-|Número de Celular|✔️|-|-|
-|email|50|alphanumeric|mandatory|-|Correo electrónico|✔️|-|-|
-|streetAddress|35|alphanumeric|mandatory|-|Calle|✔️|-|-|
-|premise|35|alphanumeric|mandatory|-|No. Exterior|✔️|-|-|
-|subPremise|35|alphanumeric|optional|-|No. Interior|✔️|-|-|
-|postalCode|5|alphanumeric|mandatory|-|Código Postal|✔️|-|-|
-|neighborhood|15|alphanumeric|mandatory|15121547603120|Id de la Colonia, Se obtiene del Servicio de /catalog/neighborhood|✔️|-|-|
-|numberId|20|alphanumeric|mandatory|-|Número de Identificación|-|✔️|-|
-|dateExpeditionNumberId|8|numeric|mandatory|AAAAMMDD|Fecha de Expedición de la Identificación|-|✔️|-|
-|dateExpirationNumberId|8|numeric|mandatory|AAAAMMDD|Fecha de Vencimiento de la Identificación|-|✔️|-|
-|channel|2|numeric|mandatory|00|Número Asignado por ABC|Hide|-|-|
-|rfc|13|alphanumeric|optional|-|RFC|-|✔️|-|
-|geolocation|40|alphanumeric|mandatory|44.244167,7.769444|Datos del dispositivo al momento de instruir la transacción|-|-|✔️|
-|identification|-|alphanumeric|mandatory|-|Credencial del INE|-|✔️|-|
-|proofAddress|-|alphanumeric|mandatory|-|Comprobante de Domicilio|-|✔️|-|
-|selfie|-|alphanumeric|mandatory|-|Prueba de Vida|-|✔️|-|
-|idSign ⚠️|-|-|-|-|-|Hide|-|-|
-|idDevice ⚠️|-|-|-|-|-|Hide|-|-|
-|sendTo ⚠️|-|-|-|-|-|Hide|-|-|
-|keygen ⚠️|-|-|-|-|-|Hide|-|-|
 
-
-## Movements [EN CONSTRUCCION ⚠️]
+## Movements
 ----------
 
 **Description:**
 
 Todo lo relacionado a la informacion de la Consulta de movimientos en la Cuenta.
 
-### Movements Pending [EN CONSTRUCCION ⚠️]
+### Movements Pending
 
 #### Service:
 
@@ -414,7 +400,14 @@ Todo lo relacionado a la informacion de la Consulta de movimientos en la Cuenta.
         "amountBlocked": "84000.00"
     }
 
-### Movements List [EN CONSTRUCCION ⚠️]
+### Definicion de campos
+
+|FIELD|SIZE|TYPE|REQUIRED|VALUES|DEFINITION|SOURCE FORM|SOURCE OCR|SOURCE DEVICE|
+|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
+|idAccount|11|alphanumeric|mandatory|00302020344|Número Asignado por ABC|Hide|-|-|
+|channel|2|numeric|mandatory|00|Número Asignado por ABC|Hide|-|-|
+
+### Movements List
 
 #### Service:
 
@@ -425,7 +418,7 @@ Todo lo relacionado a la informacion de la Consulta de movimientos en la Cuenta.
     {
         "idAccount": "00302020344",
         "channel": 00,
-        "iniDate": "2021/03/01",
+        "startDate": "2021/03/01",
         "endDate": "2021/03/30"
     }
 
@@ -444,6 +437,15 @@ Todo lo relacionado a la informacion de la Consulta de movimientos en la Cuenta.
             "runningBalance": "74253.88"
         }
     ]
+
+### Definicion de campos
+
+|FIELD|SIZE|TYPE|REQUIRED|VALUES|DEFINITION|SOURCE FORM|SOURCE OCR|SOURCE DEVICE|
+|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
+|idAccount|11|alphanumeric|mandatory|00302020344|Número Asignado por ABC|Hide|-|-|
+|channel|2|numeric|mandatory|00|Número Asignado por ABC|Hide|-|-|
+|startDate|10|alphanumeric|mandatory|2021/03/30|Fecha de inicio|Hide|-|-|
+|endDate|10|alphanumeric|mandatory|2021/03/30|Fecha final|Hide|-|-|
 
 ### Exceptions and Errors
 
@@ -747,7 +749,7 @@ Enlace a cuentas destino para transferencias recurrentes entre cuentas.
 |7|Error en email|
 |8|Error en la cuenta beneficiaria|
 
-### Definition of parameters
+### Definicion de campos
 
 |FIELD|SIZE|TYPE|REQUIRED|VALUES|DEFINITION|
 |-----------|-----------|-----------|-----------|-----------|-----------|
