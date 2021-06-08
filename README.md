@@ -755,11 +755,13 @@ Enlace a cuentas destino para transferencias recurrentes entre cuentas.
 |-----------|-----------|-----------|-----------|-----------|-----------|
 |function|1|character|mandatory|I = new, M = Modify, D = Delete|Digito para identificar la operacion|
 |prn|11|alphanumeric|mandatory|-|Identificador de Galileo|
-|account|18|alphanumeric|mandatory|CLABE 18, PHONE ID BANK  + 10, DEBIT 16|Cuenta del beneficiario|
+|account*|18|alphanumeric|mandatory|CLABE (18), PHONE (ID BANK  + 10), DEBIT CARD (16)|Cuenta del beneficiario|
 |beneficiary|40|alphanumeric|mandatory|-|Nombre del Beneficiario|
 |rfc|13|alphanumeric|optional|-|RFC con homoclave del beneficiario|
 |email|70|alphanumeric|optional|-|Email de beneficiario|
 |channel|2|numeric|mandatory|00|Número Asignado por ABC|
+
+* La CLABE bancaria deberá de tener máximo 18 dígitos, el teléfono debe de concatenar el id del banco a dos dígitos más el numero telefónico a diez dígitos, por numero de tarjeta esta tiene que ser máximo 16 dígitos.
 
 
 ## Banking Services
