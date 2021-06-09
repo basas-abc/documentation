@@ -8,13 +8,12 @@ ABCD API v1.0
 - Instalación
 
 - Endpoints
-
   - Account
   - SPEI
   - Destination Account
   - Servicios Bacarios
-
-- Catalogos
+  - Legal
+ - Catalogos
 
 ----------
 
@@ -880,7 +879,70 @@ El alfabeto empleado en la codificación base 64 a utilizar se expresa en el sig
 ![enter image description here][1]
 
   [1]: https://shareimagess.s3-us-west-2.amazonaws.com/Picture1.png
-  
+
+
+## Legal
+----------
+
+**Description:**
+
+Todo lo relacionado a servicios con información legal.
+
+### Privacy & Geolocation
+
+#### Service:
+
+    https://desavappcodi.abccapital.com.mx/WApiDisclaimer/Template
+
+#### Request
+
+    {
+        "transactionType": 433000
+    }
+
+#### Response:
+
+    {
+        "textMesasge": "Consentimiento para recabar la geolocalización en operaciones a través de dispositivos móviles\r\n\r\nDerivado de los cambios normativos que entraron en vigor el pasado 23 de marzo de 2021, de conformidad con lo previsto en los artículos 4ª Ter, 24 y 25 Bis de las.."
+    }
+
+### Definition fields:
+
+|  Parameters | Definition |
+|-|-|
+|433000|Obtener contrato sobre aviso de privacidad.|
+|550000|Obtener contrato sobre geolocalización.|
+
+
+### Account Contract
+
+#### Service:
+
+    https://www.abccapital.com.mx/CONTRATO_CUENTA_FACIL.pdf
+
+## Encryption signature
+---
+
+### Description
+
+Transactions must include the SIGNATURE field to ensure point-to-point security. 
+
+### Requirements:
+
+    - Original string
+    - Digital certificate and its corresponding private key (provided by ABC Capital)
+    - Public key cryptography algorithms for advanced electronic signature
+    - Conversion specifications of the advanced electronic signature to Base64.
+
+### Definition fields:
+
+|  Definition | Parameters |
+|-|-|
+| Cuenta de Cargo | DEBIT.ACCT.NO |
+|MXN+Monto de cargo|DEBIT.AMOUNT|
+|Concepto|EXTEND.INFO|
+|Cuenta beneficiaria|CTA.EXT.TRANSF|
+|Canal|CANAL.ENTIDAD|
 
 ## Catalogs
 ----------
