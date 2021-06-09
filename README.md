@@ -391,13 +391,20 @@ Todo lo relacionado a la informacion de la Consulta de movimientos en la Cuenta.
     }
 
 #### Response:
-
-    {
-        "originAccount": "00302020344",
-        "reference": "ACLK2113300001",
-        "dateBlocked": "13/05/2021",
-        "amountBlocked": "84000.00"
-    }
+    [
+      {
+          "originAccount": "00302020344",
+          "reference": "ACLK2113300001",
+          "dateBlocked": "13/05/2021",
+          "amountBlocked": "84000.00"
+      },
+      {
+          "originAccount": "00302020344",
+          "reference": "ACLK2113309991",
+          "dateBlocked": "13/05/2021",
+          "amountBlocked": "10000.00"
+      }
+    ]
 
 ### Definicion de campos
 
