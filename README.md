@@ -13,6 +13,7 @@ ABCD API v1.0
   - Destination Account
   - Servicios Bacarios
   - Legal
+  - Enrollment
  - Catalogos
 
 ----------
@@ -950,6 +951,196 @@ Transactions must include the SIGNATURE field to ensure point-to-point security.
 |Concepto|EXTEND.INFO|
 |Cuenta beneficiaria|CTA.EXT.TRANSF|
 |Canal|CANAL.ENTIDAD|
+
+
+
+## Enrollment
+----------
+
+**Description:**
+
+Todo lo relacionado a la creacion de la cuenta en un dispositivo Movil.
+
+### SignUp
+
+#### Service:
+
+    /enrollment/signup
+    
+#### Request:
+
+    {
+	    "telephone": "5510807535",
+	    "password": "qwert123",
+	    "idDevice": "123455ds542",
+	    "idClient": "1000100710",
+	    "source": "SITESCAPITAL"
+	}
+
+#### Response:
+
+    {
+	    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaXBoZXJlZFVzZXJJZCI6IjU1MTA4MDc1MzUiLCJjaXBoZXJl",
+	    "message": "Se activó correctamente el dispositivo"
+	}
+
+### Definicion de campos
+
+|FIELD|SIZE|TYPE|REQUIRED|VALUES|DEFINITION|SOURCE FORM|SOURCE OCR|SOURCE DEVICE|
+|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
+|telephone|10|alphanumeric|mandatory|-|Telefono|✔️|-|-|
+|password|20|alphanumeric|mandatory|-|Password Otorgado por el Cliente|✔️|-|-|
+|idDevice|40|alphanumeric|mandatory|-|IOS-UUID, ANDROID-AdroidId|Hide|-|-|
+|idClient|40|alphanumeric|mandatory|-|identificador del cliente|Hide|-|-|
+|source|40|alphanumeric|mandatory|-|Otorgado por ABC Capital|Hide|-|-|
+
+### SignIn
+
+#### Service:
+
+    /enrollment/signin
+    
+#### Request:
+
+    {
+	    "telephone": "5510807535",
+	    "password": "qwert123",
+	    "idDevice": "123455ds342",
+	    "idClient": "1000100710",
+	    "source": "SITESCAPITAL"
+	}
+
+#### Response:
+
+    {
+    	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaXBoZXJlZFVzZXJJZCI6IjU1MTA4MDc1MzUiLCJjaXBoZXJlZERldml"
+	}
+
+### Definicion de campos
+
+|FIELD|SIZE|TYPE|REQUIRED|VALUES|DEFINITION|SOURCE FORM|SOURCE OCR|SOURCE DEVICE|
+|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
+|telephone|10|alphanumeric|mandatory|-|Telefono|✔️|-|-|
+|password|20|alphanumeric|mandatory|-|Password Otorgado por el Cliente|✔️|-|-|
+|idDevice|40|alphanumeric|mandatory|-|IOS-UUID, ANDROID-AdroidId|Hide|-|-|
+|idClient|40|alphanumeric|mandatory|-|identificador del cliente|Hide|-|-|
+|source|40|alphanumeric|mandatory|-|Otorgado por ABC Capital|Hide|-|-|
+
+### Enrollment Status
+
+#### Service:
+
+    /enrollment/status
+    
+#### Request:
+
+    {
+	    "telephone": "3325418120",
+	    "idDevice": "123455ds343",
+	    "source": "SITESCAPITAL"
+	}
+
+#### Response:
+
+    {
+	    "message": "Usuario-Dispositivo REGISTRADO",
+	    "userStatus": "ACTIVATED",
+	    "deviceStatus": "ACTIVATED",
+	    "customerNumber": "1000100710"
+	}
+
+### Definicion de campos
+
+|FIELD|SIZE|TYPE|REQUIRED|VALUES|DEFINITION|SOURCE FORM|SOURCE OCR|SOURCE DEVICE|
+|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
+|telephone|10|alphanumeric|mandatory|-|Telefono|✔️|-|-|
+|idDevice|40|alphanumeric|mandatory|-|IOS-UUID, ANDROID-AdroidId|Hide|-|-||
+|source|40|alphanumeric|mandatory|-|Otorgado por ABC Capital|Hide|-|-|
+
+### Password Change
+
+#### Service:
+
+    /enrollment/password/change
+    
+#### Request:
+
+    {
+	    "telephone": "3325418120",
+	    "password": "qwerty123",
+	    "idDevice": "123455ds343",
+	    "idClient": "1000100710",
+	    "source": "SITESCAPITAL"
+	}
+
+#### Response:
+
+    {
+	    "message": "Usuario-Dispositivo REGISTRADO",
+	    "userStatus": "ACTIVATED",
+	    "deviceStatus": "ACTIVATED",
+	    "customerNumber": "1000100710"
+	}
+
+### Definicion de campos
+
+|FIELD|SIZE|TYPE|REQUIRED|VALUES|DEFINITION|SOURCE FORM|SOURCE OCR|SOURCE DEVICE|
+|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
+|telephone|10|alphanumeric|mandatory|-|Telefono|✔️|-|-|
+|password|20|alphanumeric|mandatory|-|Password Otorgado por el Cliente|✔️|-|-|
+|idDevice|40|alphanumeric|mandatory|-|IOS-UUID, ANDROID-AdroidId|Hide|-|-|
+|idClient|40|alphanumeric|mandatory|-|identificador del cliente|Hide|-|-|
+|source|40|alphanumeric|mandatory|-|Otorgado por ABC Capital|Hide|-|-|
+
+### Password Recovery
+
+#### Service:
+
+    /enrollment/password/recovery
+    
+#### Request:
+
+	{
+	    "telephone": "3325418120",
+	    "idDevice": "123455ds343",
+	    "idClient": "1000100710",
+	    "source": "SITESCAPITAL"
+	}
+
+#### Response:
+
+    {
+	    "message": "Usuario-Dispositivo REGISTRADO",
+	    "userStatus": "ACTIVATED",
+	    "deviceStatus": "ACTIVATED",
+	    "customerNumber": "1000100710"
+	}
+
+### Definicion de campos
+
+|FIELD|SIZE|TYPE|REQUIRED|VALUES|DEFINITION|SOURCE FORM|SOURCE OCR|SOURCE DEVICE|
+|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
+|telephone|10|alphanumeric|mandatory|-|Telefono|✔️|-|-|
+|idDevice|40|alphanumeric|mandatory|-|IOS-UUID, ANDROID-AdroidId|Hide|-|-|
+|idClient|40|alphanumeric|mandatory|-|identificador del cliente|Hide|-|-|
+|source|40|alphanumeric|mandatory|-|Otorgado por ABC Capital|Hide|-|-|
+
+### Exceptions and Errors
+
+#### Response
+
+    {
+        "status": "exception",
+        "code":01,
+        "message": "firma incorrecta",
+    }
+
+**Exceptions Code Http**
+    
+|CODE|MESSAGE|
+|-----------|-----------|
+|400|Data no encontrada|
+|404|Registro no satisfactorio|
 
 ## Catalogs
 ----------
