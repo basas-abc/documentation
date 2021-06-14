@@ -343,13 +343,6 @@ Apertura de una cuenta Nivel 2 en ABC Capital, Galileo y envío de Documentació
 |400|Data no encontrada|
 |404|Registro no satisfactorio|
 
-**Exceptions Code EVENT**
-    
-|CODE|MESSAGE|
-|-----------|-----------|
-|400|Data no encontrada|
-|404|Registro no satisfactorio|
-
 **Status Code**
     
 |CODE|MESSAGE|
@@ -1247,15 +1240,15 @@ Todo lo relacionado a catalogos e informacion establecida por el ABC.
 
 | ID | ESTADO                          |
 |----|---------------------------------|
-| 1  | AGUASCALIENTES                  |
-| 2  | BAJA CALIFORNIA                 |
-| 3  | BAJA CALIFORNIA SUR             |
-| 4  | CAMPECHE                        |
-| 5  | COAHUILA DE ZARAGOZA            |
-| 6  | COLIMA                          |
-| 7  | CHIAPAS                         |
-| 8  | CHIHUAHUA                       |
-| 9  | CIUDAD DE MEXICO                |
+| 01  | AGUASCALIENTES                  |
+| 02  | BAJA CALIFORNIA                 |
+| 03  | BAJA CALIFORNIA SUR             |
+| 04  | CAMPECHE                        |
+| 05  | COAHUILA DE ZARAGOZA            |
+| 06  | COLIMA                          |
+| 07  | CHIAPAS                         |
+| 08  | CHIHUAHUA                       |
+| 09  | CIUDAD DE MEXICO                |
 | 10 | DURANGO                         |
 | 11 | GUANAJUATO                      |
 | 12 | GUERRERO                        |
