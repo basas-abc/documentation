@@ -1,5 +1,4 @@
 ABCD API v1.0
--------------
 
 ----------
 
@@ -18,7 +17,7 @@ ABCD API v1.0
 
 ----------
 
-## información importante:
+## ⚠️ información importante:
 
 **Para poder hacer uso del API es necesario contar un perfil Mexicano.**
 
@@ -44,14 +43,60 @@ ABCD API v1.0
 
     Sandbox | Production : ABC Capital proporcionara para ambientes Sandbox y Production.
 
-### Headers
+### Headers:
 
     x-api-key: [API KEY]
     Content-Type:application/json
 
-----------
+### Success ✔ :
+
+**Success Code Http** 
+
+|CODE|CONTEXT|
+|-----------|-----------|
+|200|Ok!|
+
+### Exceptions ❌ :
+
+#### Response
+
+    {
+        "status": "exception",
+        "code": "01",
+        "message": "firma incorrecta",
+    }
+
+**Exceptions Code Http**
+    
+|CODE|MESSAGE|
+|-----------|-----------|
+|301|El código tipo de transacción no es valido|
+|400|Data no encontrada|
+|404|Registro no satisfactorio|
+|500|Errores mayores o igual a 500 indica error en el servidor|
+
+**Status Code**
+
+|CODE|MESSAGE|
+|-----------|-----------|
+|01|ERROR EN JASON DE ENTRADA, ID de Documento no registrado, Error al acceder a la Base de Datos, Relación Cliente y Linea de Negocio inexistente, El Número de Cliente ya existe, Código único de cliente inexistente|
+|02|CANAL INVÁLIDO, Error al acceder a la Base de Datos, Canal no registrado en Core Bancario, Longitud de Número de Cliente o CUC inválida, El Número de Cliente o CUC tiene una longitud diferente 10 posiciones, Parámetros Incorrectos|
+|03|REFERENCIA ABC-RENAPO INVÁLIDA, Error al cargar el archivo en contenedor, Cadena de Matadato Inválida, No existe el Número de Cliente o CUC, Línea de Negocio Inválida, Ocurrió un error al realizar la consulta en la BD|
+|04|CURP’s NO COINCIDEN, Se presentó un error al cargar el archivo, Metadato no existente, Línea de Negocio Inválida, Ocurrió un error al realizar la consulta en la Base de Datos|
+|05|NO COINCIDE ALGUNO DE LOS NOMBRES (Nombres, Apellido Paterno, Apellido Materno), ID de Documento inválido (0), Tipo de Documento sin información|
+|06|LA FECHA DE NACIMIENTO NO FUE PROPORCIONADA, ID de Documento no registrado, Tipo de Documento inexistente|
+|07|PROBLEMAS EN LA CONVERSION DE LA FECHA|
+|08|FECHAS DE NACIMIENTO NO COINCIDEN|
+|09|NO SE PROPORCIONO LA CURP|
+|10|ERROR AL REALIZAR CONSULTA RENAPO|
+|11|CONSULTA RENAPO NO EXITOSA|
+|12|LA CURP NO SE ENCUENTRA EN LA BASE DE DATOS|
+|13|ERROR EN JSON DE ENTRADA|
+|14|OCURRIO UN PROBLEMA AL ACCEDER AL CORE|
+|15|NO SE REALIZO EL ALTA|
 
 ## Account
+----------
 
 **Description:**
 
@@ -326,44 +371,6 @@ Apertura de una cuenta Nivel 2 en ABC Capital, Galileo y envío de Documentació
 |idAccount|11|alphanumeric|mandatory|00302020344|Número Asignado por ABC|Hide|-|-|
 |channel|2|numeric|mandatory|00|Número Asignado por ABC|Hide|-|-|
 
-### Exceptions and Errors
-
-#### Response
-
-    {
-        "status": "exception",
-        "code": 01,
-        "message": "firma incorrecta",
-    }
-
-**Exceptions Code Http**
-    
-|CODE|MESSAGE|
-|-----------|-----------|
-|400|Data no encontrada|
-|404|Registro no satisfactorio|
-
-**Status Code**
-    
-|CODE|MESSAGE|
-|-----------|-----------|
-|01|ERROR EN JASON DE ENTRADA, ID de Documento no registrado, Error al acceder a la Base de Datos, Relación Cliente y Linea de Negocio inexistente, El Número de Cliente ya existe, Código único de cliente inexistente|
-|02|CANAL INVÁLIDO, Error al acceder a la Base de Datos, Canal no registrado en Core Bancario, Longitud de Número de Cliente o CUC inválida, El Número de Cliente o CUC tiene una longitud diferente 10 posiciones, Parámetros Incorrectos|
-|03|REFERENCIA ABC-RENAPO INVÁLIDA, Error al cargar el archivo en contenedor, Cadena de Matadato Inválida, No existe el Número de Cliente o CUC, Línea de Negocio Inválida, Ocurrió un error al realizar la consulta en la BD|
-|04|CURP’s NO COINCIDEN, Se presentó un error al cargar el archivo, Metadato no existente, Línea de Negocio Inválida, Ocurrió un error al realizar la consulta en la Base de Datos|
-|05|NO COINCIDE ALGUNO DE LOS NOMBRES (Nombres, Apellido Paterno, Apellido Materno), ID de Documento inválido (0), Tipo de Documento sin información|
-|06|LA FECHA DE NACIMIENTO NO FUE PROPORCIONADA, ID de Documento no registrado, Tipo de Documento inexistente|
-|07|PROBLEMAS EN LA CONVERSION DE LA FECHA|
-|08|FECHAS DE NACIMIENTO NO COINCIDEN|
-|09|NO SE PROPORCIONO LA CURP|
-|10|ERROR AL REALIZAR CONSULTA RENAPO|
-|11|CONSULTA RENAPO NO EXITOSA|
-|12|LA CURP NO SE ENCUENTRA EN LA BASE DE DATOS|
-|13|ERROR EN JSON DE ENTRADA|
-|14|OCURRIO UN PROBLEMA AL ACCEDER AL CORE|
-|15|NO SE REALIZO EL ALTA|
-
-
 ## Movements
 ----------
 
@@ -446,23 +453,6 @@ Todo lo relacionado a la informacion de la Consulta de movimientos en la Cuenta.
 |channel|2|numeric|mandatory|00|Número Asignado por ABC|Hide|-|-|
 |startDate|10|alphanumeric|mandatory|2021/03/30|Fecha de inicio|Hide|-|-|
 |endDate|10|alphanumeric|mandatory|2021/03/30|Fecha final|Hide|-|-|
-
-### Exceptions and Errors
-
-#### Response
-
-    {
-        "status": "exception",
-        "code":01,
-        "message": "firma incorrecta",
-    }
-
-**Exceptions Code Http**
-    
-|CODE|MESSAGE|
-|-----------|-----------|
-|400|Data no encontrada|
-|404|Registro no satisfactorio|
 
 ## Transfers
 ----------
@@ -572,29 +562,6 @@ Lanzar transferencias entre cuentas Fintech a Fintech.
        "idTransaction": "12345678",
     }
 
-**Success Code Http** 
-
-|CODE|CONTEXT|
-|-----------|-----------|
-|200|Ok!|
-|201|Transaccion en envio|
-
-### Exceptions and Errors
-
-#### Response
-
-    {
-        "status": "exception",
-        "message": "firma incorrecta",
-    }
-
-**Exceptions Code Http**
-    
-|CODE|CONTEXT|
-|-----------|-----------|
-|400|Problemas con la Data Enviada|
-|409|No es posible hacer la transaccion|
-
 ### Definicion de parametros
 
 |FIELD|SIZE|TYPE|REQUIRED|VALUES|DEFINITION|
@@ -651,14 +618,6 @@ Enlace a cuentas destino para transferencias recurrentes entre cuentas.
         "idBeneficiary": "12345678"
     }
 
-**Success Code Http** 
-
-|CODE|CONTEXT|
-|-----------|-----------|
-|200|Registro de Beneficiario|
-
----
-
 ### Modify Destination Account
 
 #### Service:
@@ -683,14 +642,6 @@ Enlace a cuentas destino para transferencias recurrentes entre cuentas.
         "message": "modified account",
     }
 
-**Success Code Http** 
-
-|CODE|CONTEXT|
-|-----------|-----------|
-|200|Ok!|
-
----
-
 ### Unlink Destination Account
 
 #### Service:
@@ -709,29 +660,6 @@ Enlace a cuentas destino para transferencias recurrentes entre cuentas.
         "status": "success",
         "message": "unlinked account"
     }
-
-**Success Code Http** 
-
-|CODE|CONTEXT|
-|-----------|-----------|
-|200|Ok!|
-
-
-### Exceptions and Errors
-
-#### Response
-
-    {
-        "status": "error",
-        "code":1,
-        "message": "firma incorrecta",
-    }
-
-**Exceptions Code Http**
-    
-|CODE|CONTEXT|
-|-----------|-----------|
-|400|Problemas con la informacion de Formulario|
 
 **Status Code**
     
@@ -945,8 +873,6 @@ Transactions must include the SIGNATURE field to ensure point-to-point security.
 |Cuenta beneficiaria|CTA.EXT.TRANSF|
 |Canal|CANAL.ENTIDAD|
 
-
-
 ## Enrollment
 ----------
 
@@ -1118,23 +1044,6 @@ Todo lo relacionado a la creacion de la cuenta en un dispositivo Movil.
 |idClient|40|alphanumeric|mandatory|-|identificador del cliente|Hide|-|-|
 |source|40|alphanumeric|mandatory|-|Otorgado por ABC Capital|Hide|-|-|
 
-### Exceptions and Errors
-
-#### Response
-
-    {
-        "status": "exception",
-        "code":01,
-        "message": "firma incorrecta",
-    }
-
-**Exceptions Code Http**
-    
-|CODE|MESSAGE|
-|-----------|-----------|
-|400|Data no encontrada|
-|404|Registro no satisfactorio|
-
 ## Catalogs
 ----------
 
@@ -1222,33 +1131,21 @@ Todo lo relacionado a catalogos e informacion establecida por el ABC.
 |-----------|-----------|-----------|-----------|-----------|-----------|
 |postalCode|5|numeric|mandatory|54760|Código Postale|
 
-**Success Code Http** 
-
-|CODE|CONTEXT|
-|-----------|-----------|
-|200|OK!|
-
-**Exception Code Http** 
-
-|CODE|CONTEXT|
-|-----------|-----------|
-|400|Problemas para obtener el catalogo|
-
 ## Catalogos fijos:
 
 ### Entidades Federativas
 
 | ID | ESTADO                          |
 |----|---------------------------------|
-| 01  | AGUASCALIENTES                  |
-| 02  | BAJA CALIFORNIA                 |
-| 03  | BAJA CALIFORNIA SUR             |
-| 04  | CAMPECHE                        |
-| 05  | COAHUILA DE ZARAGOZA            |
-| 06  | COLIMA                          |
-| 07  | CHIAPAS                         |
-| 08  | CHIHUAHUA                       |
-| 09  | CIUDAD DE MEXICO                |
+| 01 | AGUASCALIENTES                  |
+| 02 | BAJA CALIFORNIA                 |
+| 03 | BAJA CALIFORNIA SUR             |
+| 04 | CAMPECHE                        |
+| 05 | COAHUILA DE ZARAGOZA            |
+| 06 | COLIMA                          |
+| 07 | CHIAPAS                         |
+| 08 | CHIHUAHUA                       |
+| 09 | CIUDAD DE MEXICO                |
 | 10 | DURANGO                         |
 | 11 | GUANAJUATO                      |
 | 12 | GUERRERO                        |
