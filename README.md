@@ -79,14 +79,15 @@ ABCD API v1.0
 
 |CODE|MESSAGE|
 |-----------|-----------|
-|01|ERROR EN JASON DE ENTRADA, ID de Documento no registrado, Error al acceder a la Base de Datos, Relación Cliente y Linea de Negocio inexistente, El Número de Cliente ya existe, Código único de cliente inexistente|
-|02|CANAL INVÁLIDO, Error al acceder a la Base de Datos, Canal no registrado en Core Bancario, Longitud de Número de Cliente o CUC inválida, El Número de Cliente o CUC tiene una longitud diferente 10 posiciones, Parámetros Incorrectos|
-|03|REFERENCIA ABC-RENAPO INVÁLIDA, Error al cargar el archivo en contenedor, Cadena de Matadato Inválida, No existe el Número de Cliente o CUC, Línea de Negocio Inválida, Ocurrió un error al realizar la consulta en la BD|
-|04|CURP’s NO COINCIDEN, Se presentó un error al cargar el archivo, Metadato no existente, Línea de Negocio Inválida, Ocurrió un error al realizar la consulta en la Base de Datos|
-|05|NO COINCIDE ALGUNO DE LOS NOMBRES (Nombres, Apellido Paterno, Apellido Materno), ID de Documento inválido (0), Tipo de Documento sin información|
-|06|LA FECHA DE NACIMIENTO NO FUE PROPORCIONADA, ID de Documento no registrado, Tipo de Documento inexistente|
-|07|PROBLEMAS EN LA CONVERSION DE LA FECHA|
-|08|FECHAS DE NACIMIENTO NO COINCIDEN|
+|00|PRN no existe|
+|01|ERROR EN JASON DE ENTRADA, ID de Documento no registrado, Error al acceder a la Base de Datos, Relación Cliente y Linea de Negocio inexistente, El Número de Cliente ya existe, Código único de cliente inexistente, Longitud de cuenta inválida|
+|02|CANAL INVÁLIDO, Error al acceder a la Base de Datos, Canal no registrado en Core Bancario, Longitud de Número de Cliente o CUC inválida, El Número de Cliente o CUC tiene una longitud diferente 10 posiciones, Parámetros Incorrectos, Longitud de cuenta inválida,Falta información obligatoria|
+|03|REFERENCIA ABC-RENAPO INVÁLIDA, Error al cargar el archivo en contenedor, Cadena de Matadato Inválida, No existe el Número de Cliente o CUC, Línea de Negocio Inválida, Ocurrió un error al realizar la consulta en la BD, Error en email|
+|04|CURP’s NO COINCIDEN, Se presentó un error al cargar el archivo, Metadato no existente, Línea de Negocio Inválida, Ocurrió un error al realizar la consulta en la Base de Datos, Error en canal|
+|05|NO COINCIDE ALGUNO DE LOS NOMBRES (Nombres, Apellido Paterno, Apellido Materno), ID de Documento inválido (0), Tipo de Documento sin información, Cliente inexistente|
+|06|LA FECHA DE NACIMIENTO NO FUE PROPORCIONADA, ID de Documento no registrado, Tipo de Documento inexistente, Error en RFC|
+|07|PROBLEMAS EN LA CONVERSION DE LA FECHA, Error en email|
+|08|FECHAS DE NACIMIENTO NO COINCIDEN, Error en la cuenta beneficiaria|
 |09|NO SE PROPORCIONO LA CURP|
 |10|ERROR AL REALIZAR CONSULTA RENAPO|
 |11|CONSULTA RENAPO NO EXITOSA|
@@ -661,20 +662,6 @@ Enlace a cuentas destino para transferencias recurrentes entre cuentas.
         "message": "unlinked account"
     }
 
-**Status Code**
-    
-|CODE|MESSAGE|
-|-----------|-----------|
-|0|PRN no existe|
-|1|Longitud de cuenta inválida|
-|2|Falta información obligatoria|
-|3|Error en email|
-|4|Error en canal|
-|5|Cliente inexistente|
-|6|Error en RFC|
-|7|Error en email|
-|8|Error en la cuenta beneficiaria|
-
 ### Definicion de campos
 
 |FIELD|SIZE|TYPE|REQUIRED|VALUES|DEFINITION|
@@ -837,10 +824,10 @@ Todo lo relacionado a servicios con información legal.
 
 ### Definition fields:
 
-|  Parameters | Definition |
-|-|-|
-|433000|Obtener contrato sobre aviso de privacidad.|
-|550000|Obtener contrato sobre geolocalización.|
+| Parameters | Value | Definition |
+|-|-|-|
+|transactionType|433000|Obtener contrato sobre aviso de privacidad.|
+|transactionType|550000|Obtener contrato sobre geolocalización.|
 
 
 ### Account Contract
