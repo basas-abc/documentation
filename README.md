@@ -1031,6 +1031,60 @@ Todo lo relacionado a la creacion de la cuenta en un dispositivo Movil.
 |idClient|40|alphanumeric|mandatory|-|identificador del cliente|Hide|-|-|
 |source|40|alphanumeric|mandatory|-|Otorgado por ABC Capital|Hide|-|-|
 
+## Service
+----------
+
+**Description:**
+
+Todo a la estructura inicial de servicios.
+
+#### Service:
+
+    /services/structure
+
+#### Response
+
+	    {
+	    "name": "siteCapital",
+	    "channel": 10,
+	    "levelAccounts": 2,
+	    "idCompany": "4AD8A2A7-57A4-4731-B0ED-37EE5B17D1EF",
+	    "version": {
+		"app": "1.0",
+		"api": "1.0"
+	    },
+	    "services": {
+		"cards": {
+		    "active": true,
+		    "product": {
+			"debit": {
+			    "physicalGeneric": {
+				"active": true,
+				"request": false
+			    },
+			    "physicalCustom": {
+				"active": true,
+				"request": false
+			    },
+			    "digital": true
+			}
+		    }
+		}
+	    }
+	    },
+	    "theme": {
+		"mainColor": "#3880FF",
+		"textButtonColor": "#FFFFFF"
+	    }
+	}
+
+### Definition of parameters
+
+|FIELD|SIZE|TYPE|REQUIRED|VALUES|DEFINITION|
+|-----------|-----------|-----------|-----------|-----------|-----------|
+|id|3|alphanumeric|optional|001|Id de la institución|
+|bank|10|alphanumeric|optional|banco...nombre|Nombre Corto de la Institución|
+
 ## Catalogs
 ----------
 
@@ -1042,7 +1096,6 @@ Todo lo relacionado a catalogos e informacion establecida por el ABC.
 
     /catalog/bank
 
-    
 #### Request
 
     {
