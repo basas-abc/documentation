@@ -105,7 +105,7 @@ Apertura de una cuenta Nivel 2 en ABC Capital, Galileo y envío de Documentació
 
 ![enter image description here][2]
 
-  [2]: https://images-shared-team.s3.amazonaws.com/Service+single+SignUp-last.jpeg
+  [2]: https://images-shared-team.s3.amazonaws.com/Service+single+SignUp.jpeg
 
 ### Register Simple
 
